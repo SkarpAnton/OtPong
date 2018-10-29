@@ -7,5 +7,9 @@
 *Italialaista tekstiä*
 
 **vahvaa tekstiä**
+<<<<<<< HEAD
 Muuutooos
+=======
+muutetaan samaa asiaa
+>>>>>>> 474bdcf3b7ab3e6afacdd6bcb12193d0ae044213
 
