@@ -1,0 +1,76 @@
+commit ea970a0ad812e7b3e39dc60cdea98d263e989f53
+Author: AntonSkarp <anton.skarp@helsinki.fi>
+Date:   Mon Oct 29 21:49:40 2018 +0200
+
+    paljon muutoksia
+
+ file2           | 0
+ file1 => file22 | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 968e787d672e6704fbaaae7968e89952a8babcc5
+Author: AntonSkarp <anton.skarp@helsinki.fi>
+Date:   Mon Oct 29 21:44:51 2018 +0200
+
+    tiedostojen lisäyksiä
+
+ file1 | 0
+ file2 | 0
+ file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 589fd192de870837c9a1401438ffcb87ecd81730
+Author: AntonSkarp <anton.skarp@helsinki.fi>
+Date:   Mon Oct 29 21:43:26 2018 +0200
+
+    yeah
+
+ laskarit/viikko1/komentorivi.txt | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+commit 07caeeb33730c3317b6d2166770525b3980c3c29
+Author: AntonSkarp <anton.skarp@helsinki.fi>
+Date:   Mon Oct 29 21:09:32 2018 +0200
+
+    uudelleen nimeäminen
+
+ kolmas.txt => kaksi.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 59f7df3fccb7c1ee29c3c2f03c8a011ecd671ce2
+Author: AntonSkarp <anton.skarp@helsinki.fi>
+Date:   Mon Oct 29 21:08:09 2018 +0200
+
+    poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 3fa0b3d4e385a2232a1c7232bd895e5b414bc210
+Author: AntonSkarp <anton.skarp@helsinki.fi>
+Date:   Mon Oct 29 20:59:52 2018 +0200
+
+    lisäyksiä ja yksi luonti
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 804d534aa4112a16d1eb6121f01822f6358bee04
+Author: AntonSkarp <anton.skarp@helsinki.fi>
+Date:   Mon Oct 29 20:44:59 2018 +0200
+
+    muutos ja luonti
+
+ tiedosto.txt | 2 ++
+ toinen.txt   | 0
+ 2 files changed, 2 insertions(+)
+
+commit 278365d4b5bf3e51f9edfdc24e85308a44794d87
+Author: AntonSkarp <anton.skarp@helsinki.fi>
+Date:   Mon Oct 29 20:37:25 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
