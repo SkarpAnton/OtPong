@@ -13,6 +13,7 @@ mailaa
 * mailat liikkuu vertikaalisesti pelaajien käskyistä
 * pallo kimpoaa mailoista (saatan tehdä pallon kimpouksen hiukan eri tavalla kuin alkuperäisessä pelissä)
 * peli yhteentoista
+
 [video 1972 Atari Pong:ista](https://www.youtube.com/watch?v=e4VRgY3tkh0)
 
 # Jatkokehitysideoita 
