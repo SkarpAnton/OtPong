@@ -13,5 +13,16 @@ mailaa
 * mailat liikkuu vertikaalisesti pelaajien käskyistä
 * pallo kimpoaa mailoista (saatan tehdä pallon kimpouksen hiukan eri tavalla kuin alkuperäisessä pelissä)
 * peli yhteentoista
+
+# Jatkokehitysideoita 
+
+* käyttäjien lisäys
+* asetusten lisääminen (ylös alas näppäimet vaihtoehtoja, pelaaja voi valita pallon 
+nopeuden, erilaisia pallon kimpoiluja mailasta jne.)
+* tallennetaan käyttäjistä tilastoja tietokantaan
+* leaderboard:in lisääminen
+* nettisivu tilastoille
+* yhden pelaajan moodi, tekoäly vastustaja
+
  
 
