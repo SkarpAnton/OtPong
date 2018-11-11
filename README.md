@@ -1,4 +1,4 @@
-##Ohjelmistotekniikka harjoitustyö
+## Ohjelmistotekniikka harjoitustyö
 
 Tämä on Helsingin yliopiston ohjelmistotekniikan harjoitusprojekti, joka on tällä 
 hetkellä työn alla. Tarkoitus olisi 
