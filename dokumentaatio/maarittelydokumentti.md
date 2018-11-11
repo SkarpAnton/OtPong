@@ -16,7 +16,7 @@ mailaa
 
 [video 1972 Atari Pong:ista](https://www.youtube.com/watch?v=e4VRgY3tkh0)
 
-# Jatkokehitysideoita 
+### Jatkokehitysideoita 
 
 * käyttäjien lisäys
 * asetusten lisääminen (ylös alas näppäimet vaihtoehtoja, pelaaja voi valita pallon 
