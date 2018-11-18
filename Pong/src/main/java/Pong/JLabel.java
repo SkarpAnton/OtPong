@@ -1,0 +1,6 @@
+
+package Pong;
+
+class JLabel {
+
+}
