@@ -14,7 +14,9 @@ mailaa
 * pallo kimpoaa mailoista (saatan tehdä pallon kimpouksen hiukan eri tavalla kuin alkuperäisessä pelissä)
 * peli yhteentoista
 
-# Jatkokehitysideoita 
+[video 1972 Atari Pong:ista](https://www.youtube.com/watch?v=e4VRgY3tkh0)
+
+### Jatkokehitysideoita 
 
 * käyttäjien lisäys
 * asetusten lisääminen (ylös alas näppäimet vaihtoehtoja, pelaaja voi valita pallon 
