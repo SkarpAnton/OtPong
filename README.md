@@ -6,8 +6,8 @@ Tämä on Helsingin yliopiston ohjelmistotekniikan harjoitusprojekti, joka on t�
 hetkellä työn alla.
 
 ## Dokumentaatio
-[Vaativuusmäärittely](https://github.com/SkarpAnton/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md).
+[Vaativuusmäärittely](https://github.com/SkarpAnton/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
-[Työaikakirjanpito](https://github.com/SkarpAnton/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md).
+[Työaikakirjanpito](https://github.com/SkarpAnton/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 
