@@ -26,6 +26,7 @@ Testikattavuusraportti luodaan komennolla
 ```
 mvn jacoco:report
 ```
+Lisäsin halutun pluginin, mutta se rikkoi ainakin itselläni kattavuusraportin luomisen, joten jos on kattavuusraportin kanssa ongelmia niin voi yrittää poistaa surefire pluginin
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
 
@@ -37,7 +38,7 @@ Komento
 mvn package
 ```
 
-generoi hakemistoon _target_ suoritettavan jar-tiedoston _OtmTodoApp-1.0-SNAPSHOT.jar_
+generoi hakemistoon _target_ suoritettavan jar-tiedoston
 
 
 ### Checkstyle
