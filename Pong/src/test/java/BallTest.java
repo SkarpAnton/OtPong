@@ -16,6 +16,7 @@ import pong.Ball;
  */
 public class BallTest {
     private Ball ball;
+    
     public BallTest() {
     }
     
@@ -25,5 +26,19 @@ public class BallTest {
         ball = new Ball();
     }
     
-    
+    @Test
+    public void moveWorks() {
+        int previousX = ball.getX();
+        ball.move(0, 0);
+        assertTrue(previousX != ball.getX());
+    }
+    @Test
+    public void scoringWorks() {
+        int previousScore = ball.getPlayerOneScore();
+        for(int i = 0; i < 150; i++) {
+            ball.move(-100, -100);
+        }
+        ball.scored();
+        assertTrue(previousScore != ball.getPlayerOneScore());
+    }
 }

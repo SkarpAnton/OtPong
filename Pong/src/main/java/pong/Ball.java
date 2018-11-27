@@ -21,8 +21,7 @@ public class Ball {
         newStart();
     }
 
-    public void move(int playerOneY, int playerTwoY, int playerOneSpeed,
-            int playerTwoSpeed) {
+    public void move(int playerOneY, int playerTwoY) {
         x += xSpeed;
         y += ySpeed;
         timeFromHit ++;

@@ -47,8 +47,8 @@ public class GameController {
             public void handle(long currentNanoTime) {
                 elements.getPaddleP1().setY(pong.getPlayerOne().getUpdatedHeight());
                 elements.getPaddleP2().setY(pong.getPlayerTwo().getUpdatedHeight());
-                pong.getBall().move(pong.getPlayerOne().getUpdatedHeight(), pong.getPlayerTwo().getUpdatedHeight(),
-                        pong.getPlayerOne().getPadelDirection(), pong.getPlayerTwo().getPadelDirection());
+                pong.getBall().move(pong.getPlayerOne().getUpdatedHeight(),
+                        pong.getPlayerTwo().getUpdatedHeight());
                 pong.getBall().scored();
                 elements.getBallElement().setCenterX(pong.getBall().getX());
                 elements.getBallElement().setCenterY(pong.getBall().getY());
