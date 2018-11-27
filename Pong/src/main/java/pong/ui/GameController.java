@@ -1,6 +1,5 @@
 package pong.ui;
 
-import pong.ui.FxElements;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;

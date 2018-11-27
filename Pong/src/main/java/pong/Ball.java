@@ -5,7 +5,7 @@ import java.util.Random;
 public class Ball {
 
     private final Random rand = new Random();
-    private int startingDirection = 1;
+    private int startingDirection = rand.nextBoolean() ? 1 : -1;
     private int timeFromHit = 30;
     private int playerOneScore = 0;
     private int playerTwoScore = 0;
