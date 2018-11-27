@@ -1,10 +1,13 @@
-package pong;
+package pong.ui;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import pong.Ball;
+import pong.Field;
+import pong.Paddle;
 
 public class FxElements {
 

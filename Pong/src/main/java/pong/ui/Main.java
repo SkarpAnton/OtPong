@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pong;
+package pong.ui;
 
+import pong.ui.GameController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
