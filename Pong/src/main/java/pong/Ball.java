@@ -5,42 +5,48 @@ import java.util.Random;
 public class Ball {
 
     private final Random rand = new Random();
-    private final int fieldWidth = 1200;
-    private final int fieldHeight = 800;
     private int startingDirection = 1;
-    private int xSpeed = 4;
-    private int ySpeed = rand.nextInt(6) - 3;
-    private int x = fieldWidth / 2;
-    private int y = rand.nextInt(fieldHeight);
+    private int timeFromHit = 30;
     private int playerOneScore = 0;
     private int playerTwoScore = 0;
-    private final int ballDiameter = 40;
-    private final int paddleHeight = 80;
+    private final static int BALL_RADIUS = 12;
+    private double overAllSpeed;
+    private double ySpeed;
+    private double xSpeed;
+    private double x;
+    private double y;
+    
+    
+    public Ball() {
+        newStart();
+    }
 
     public void move(int playerOneY, int playerTwoY, int playerOneSpeed,
             int playerTwoSpeed) {
         x += xSpeed;
         y += ySpeed;
-        if (y >= fieldHeight - ballDiameter || y <= 0) {
+        timeFromHit ++;
+       
+        if (collidesWithSide()) {
             ySpeed = -ySpeed;
         }
         if (collidesWithLeftPaddel(playerOneY)) {
-            xSpeed = -xSpeed;
-            ySpeed += playerOneSpeed;
+            collision(playerOneY);
+            xSpeed = overAllSpeed - Math.abs(ySpeed);
         }
         if (collidesWithRightPaddel(playerTwoY)) {
-            xSpeed = -xSpeed;
-            ySpeed += playerTwoSpeed;
+            collision(playerTwoY);
+            xSpeed = -(overAllSpeed - Math.abs(ySpeed));
         }
     }
-
+    
     public void scored() {
         if (x <= 0) {
             playerTwoScore++;
             startingDirection = 1;
             newStart();
         }
-        if (x >= fieldWidth) {
+        if (x >= Field.getWIDTH()) {
             playerOneScore++;
             startingDirection = -1;
             newStart();
@@ -48,18 +54,20 @@ public class Ball {
     }
 
     private void newStart() {
-        x = fieldWidth / 2;
-        y = rand.nextInt(fieldHeight);
-        ySpeed = rand.nextInt(6) - 3;
-        xSpeed = startingDirection * 3;
+        
+        x = Field.getWIDTH() / 2;
+        y = rand.nextInt(Field.getHEIGHT() - 100) + 50;
+        ySpeed = rand.nextInt(3) - 1;
+        overAllSpeed = 6;      
+        xSpeed = startingDirection * (overAllSpeed - Math.abs(ySpeed));
     }
 
     public int getX() {
-        return x;
+        return (int) x;
     }
 
     public int getY() {
-        return y;
+        return (int) y;
     }
 
     public int getPlayerOneScore() {
@@ -69,15 +77,55 @@ public class Ball {
     public int getPlayerTwoScore() {
         return playerTwoScore;
     }
-
+    private boolean collidesWithSide() {
+        return y >= Field.getHEIGHT() - BALL_RADIUS || y <= BALL_RADIUS;
+    }
     private boolean collidesWithLeftPaddel(int playerOneY) {
-        return x <= 120 && x >= 115 && y >= playerOneY - ballDiameter
-                && y <= playerOneY + paddleHeight;
+        return x <= 120 && x >= 110 && y >= playerOneY - BALL_RADIUS &&
+                y <= playerOneY + Paddle.getPADDLE_HEIGHT() &&
+                timeFromHit > 2;
     }
 
     private boolean collidesWithRightPaddel(int playerTwoY) {
-        return x >= fieldWidth - 120 && x <= fieldWidth - 110
-                && y >= playerTwoY - ballDiameter && y <= playerTwoY + paddleHeight;
+        return x >= Field.getWIDTH() - 120 && x <= Field.getWIDTH() - 110 &&
+                y >= playerTwoY - BALL_RADIUS && y <= playerTwoY + Paddle.getPADDLE_HEIGHT() &&
+                timeFromHit > 2;
     }
+
+    private void collision(int playerY) {
+        overAllSpeed = overAllSpeed + 0.1;
+        if(Math.abs(ySpeed) < 4) {
+            ySpeed = ySpeedChangeDueToPositionOfHit(playerY);
+        }
+        timeFromHit = 0;
+    }
+
+    private int ySpeedChangeDueToPositionOfHit(int playerY) {
+        double positionOfHit = y - playerY;
+        int yChange = -2;
+        for (int i = 0; i <= 100; i += 20, yChange ++) {
+            if (positionOfHit < i) {
+                return yChange;
+            }
+        }
+        return 0;
+    }
+
+    public boolean isPlayerOneWinner() {
+        return playerOneScore >= 11;
+    }
+
+    public boolean isPlayerTwoWinner() {
+        return playerTwoScore >= 11;
+    }
+    
+    public boolean hasGameEnded() {
+        return isPlayerOneWinner() || isPlayerTwoWinner();
+    }
+
+    public static int getBALL_DIAMETER() {
+        return BALL_RADIUS;
+    }
+    
 
 }
