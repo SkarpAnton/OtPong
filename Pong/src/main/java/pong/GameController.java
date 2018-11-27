@@ -10,7 +10,7 @@ public class GameController {
     private final Pong pong = new Pong();
     private final FxElements elements;
     private final Pane root;
-    private Scene scene;
+    private final Scene scene;
 
     public GameController() {
         elements = new FxElements();

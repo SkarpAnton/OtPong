@@ -1,6 +1,5 @@
 package pong;
 
-
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
