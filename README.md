@@ -26,7 +26,7 @@ Testikattavuusraportti luodaan komennolla
 ```
 mvn jacoco:report
 ```
-Lisäsin halutun pluginin, mutta se rikkoi ainakin itsellämi kattavuusraportin luomisen, joten jos on kattavuusraportin kanssa ongelmia niin vo yrittää poistaa surefire pluginin
+Lisäsin halutun pluginin, mutta se rikkoi ainakin itselläni kattavuusraportin luomisen, joten jos on kattavuusraportin kanssa ongelmia niin voi yrittää poistaa surefire pluginin
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
 
