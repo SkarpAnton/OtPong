@@ -1,5 +1,6 @@
-package pong.ui;
+package pong.ui.menu;
 
+import pong.ui.menu.MenuBox;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;

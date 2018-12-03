@@ -1,10 +1,10 @@
-package pong.ui.starting_menu;
+package pong.ui.menu.starting;
 
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import pong.game.Field;
-import pong.ui.MenuBox;
+import pong.ui.menu.MenuBox;
 
 public class StartingMenuElements {
 

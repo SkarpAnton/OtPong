@@ -1,7 +1,7 @@
-package pong.ui.difficulty;
+package pong.ui.menu.difficulty;
 
 import javafx.scene.layout.Pane;
-import pong.ui.MenuController;
+import pong.ui.menu.MenuController;
 import pong.ui.game.GameController;
 
 public class DifficultyController extends MenuController {

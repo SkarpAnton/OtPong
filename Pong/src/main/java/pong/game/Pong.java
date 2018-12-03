@@ -8,10 +8,12 @@ public class Pong {
     private int playerTwoScore = 0;
     private final User playerOne = new User(KeyCode.W, KeyCode.S);
     private final User playerTwo = new User(KeyCode.UP, KeyCode.DOWN);
+    private final Boolean twoPlayerGame;
     private final Ball ball;
     private final AI ai;
 
-    public Pong(int ballSpeed) {
+    public Pong(int ballSpeed, boolean twoPlayers) {
+        this.twoPlayerGame = twoPlayers;
         ball = new Ball(ballSpeed);
         ai = new AI(ball);
     }
@@ -34,6 +36,16 @@ public class Pong {
 
     public int getPlayerTwoScore() {
         return playerTwoScore;
+    }
+    
+    public void move() {
+        if (twoPlayerGame) {
+            ball.move(playerOne.getUpdatedHeight(), playerTwo.getUpdatedHeight());
+        } else {
+            ai.move();
+            ball.move(playerOne.getUpdatedHeight(), ai.getY());
+        }
+        
     }
 
     public void scored() {

@@ -20,7 +20,7 @@ public class GameController {
     public GameController(Boolean twoPlayerGame, int ballSpeed, Stage stage) {
         this.stage = stage;
         this.twoPlayerGame = twoPlayerGame;
-        pong = new Pong(ballSpeed);
+        pong = new Pong(ballSpeed, twoPlayerGame);
         elements = new GameElements();
         root = elements.createGameRoot();
         scene = new Scene(root, Field.getWIDTH(), Field.getHEIGHT());
@@ -50,11 +50,12 @@ public class GameController {
         new AnimationTimer() {
             @Override
             public void handle(long currentNanoTime) {
+                pong.move();
                 elements.getPaddleP1().setY(pong.getPlayerOne().getUpdatedHeight());
                 if (twoPlayerGame) {
-                    playTwoPlayer();
+                    elements.getPaddleP2().setY(pong.getPlayerTwo().getUpdatedHeight());
                 } else {
-                    playOnePlayer();
+                    elements.getPaddleP2().setY(pong.getAi().getY());
                 }
                 updateBall();
                 updateScore();
@@ -73,17 +74,6 @@ public class GameController {
         elements.getP2ScoreText().setText("P2: " + pong.getPlayerTwoScore());
     }
 
-    private void playTwoPlayer() {
-        elements.getPaddleP2().setY(pong.getPlayerTwo().getUpdatedHeight());
-        pong.getBall().move(pong.getPlayerOne().getUpdatedHeight(),
-                pong.getPlayerTwo().getUpdatedHeight());
-    }
-
-    private void playOnePlayer() {
-        pong.getAi().move();
-        elements.getPaddleP2().setY(pong.getAi().getY());
-        pong.getBall().move(pong.getPlayerOne().getUpdatedHeight(),
-                pong.getAi().getY());
-    }
+   
 
 }

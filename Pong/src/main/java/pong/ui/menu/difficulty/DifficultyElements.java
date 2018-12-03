@@ -1,7 +1,7 @@
-package pong.ui.difficulty;
+package pong.ui.menu.difficulty;
 
 import javafx.scene.text.Text;
-import pong.ui.MenuBox;
+import pong.ui.menu.MenuBox;
 
 public class DifficultyElements {
 

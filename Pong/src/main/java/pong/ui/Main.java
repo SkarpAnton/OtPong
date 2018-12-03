@@ -2,8 +2,8 @@ package pong.ui;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import pong.ui.starting_menu.StartingMenuElements;
-import pong.ui.starting_menu.StartingMenuController;
+import pong.ui.menu.starting.StartingMenuElements;
+import pong.ui.menu.starting.StartingMenuController;
 
 public class Main extends Application {
 

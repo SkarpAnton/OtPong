@@ -1,11 +1,11 @@
-package pong.ui.starting_menu;
+package pong.ui.menu.starting;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.layout.Pane;
-import pong.ui.MenuController;
-import pong.ui.difficulty.DifficultyController;
-import pong.ui.difficulty.DifficultyElements;
+import pong.ui.menu.MenuController;
+import pong.ui.menu.difficulty.DifficultyController;
+import pong.ui.menu.difficulty.DifficultyElements;
 
 public class StartingMenuController extends MenuController {
 
