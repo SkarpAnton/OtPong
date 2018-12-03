@@ -73,7 +73,4 @@ public class GameController {
         elements.getP1ScoreText().setText("P1: " + pong.getPlayerOneScore());
         elements.getP2ScoreText().setText("P2: " + pong.getPlayerTwoScore());
     }
-
-   
-
 }
