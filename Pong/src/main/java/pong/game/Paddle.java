@@ -1,10 +1,10 @@
 
-package pong;
+package pong.game;
 
-public class Field {
-    
-    private static final int HEIGHT = 800;
-    private static final int WIDTH = 1200;
+public class Paddle {
+
+    private final static int HEIGHT = 80;
+    private final static int WIDTH = 20;
 
     public static int getHEIGHT() {
         return HEIGHT;
@@ -13,4 +13,5 @@ public class Field {
     public static int getWIDTH() {
         return WIDTH;
     }
+
 }

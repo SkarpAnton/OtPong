@@ -1,20 +1,23 @@
+package tests;
+
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import pong.Paddle;
+import pong.game.User;
 
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pong.game.Paddle;
 
 public class PaddleTest {
 
-    private Paddle paddle;
+    private User paddle;
     private final int frameHeight = 800;
 
     @Before
     public void setUp() {
-        paddle = new Paddle(KeyCode.W, KeyCode.S);
+        paddle = new User(KeyCode.W, KeyCode.S);
     }
 
     @Test
@@ -54,7 +57,7 @@ public class PaddleTest {
             paddle.move(KeyCode.S);
             paddle.getUpdatedHeight();
         }
-        assertEquals(frameHeight - Paddle.getPADDLE_HEIGHT(), paddle.getUpdatedHeight());
+        assertEquals(frameHeight - Paddle.getHEIGHT(), paddle.getUpdatedHeight());
     }
 
     @Test

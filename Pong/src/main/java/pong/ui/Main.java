@@ -1,22 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pong.ui;
 
-import pong.ui.GameController;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import pong.ui.starting_menu.StartingMenuElements;
+import pong.ui.starting_menu.StartingMenuController;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Fake Pong");
-        primaryStage.setScene(new GameController().getScene());
-        primaryStage.show();
-
+    public void start(Stage stage) throws Exception {
+        StartingMenuController startingMenuController
+                = new StartingMenuController(new StartingMenuElements());
+        startingMenuController.run(stage);
     }
 
     public static void main(String[] args) {

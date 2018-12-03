@@ -1,24 +1,22 @@
-package pong;
+package pong.game;
 
 import javafx.scene.input.KeyCode;
 
-public class Paddle {
+public class User {
 
     private final KeyCode upKey;
     private final KeyCode downKey;
     private int y;
     private Direction direction = Direction.NO_DIRECTION;
-    private final static int PADDLE_HEIGHT = 80;
-    private final static int PADDLE_WIDTH = 20;
 
-    public Paddle(KeyCode upKey, KeyCode downKey) {
+    public User(KeyCode upKey, KeyCode downKey) {
         this.upKey = upKey;
         this.downKey = downKey;
         y = Field.getHEIGHT() / 2;
     }
 
     public int getUpdatedHeight() {
-        if (y < Field.getHEIGHT() - PADDLE_HEIGHT && direction == Direction.DOWN) {
+        if (y < Field.getHEIGHT() - Paddle.getHEIGHT() && direction == Direction.DOWN) {
             y += 4;
         }
         if (y >= 2 && direction == Direction.UP) {
@@ -54,13 +52,5 @@ public class Paddle {
             default:
                 return 0;
         }
-    }
-
-    public static int getPADDLE_HEIGHT() {
-        return PADDLE_HEIGHT;
-    }
-
-    public static int getPADDLE_WIDTH() {
-        return PADDLE_WIDTH;
     }
 }

@@ -1,4 +1,4 @@
-package pong.ui;
+package pong.ui.game;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -6,11 +6,11 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import pong.Ball;
-import pong.Field;
-import pong.Paddle;
+import pong.game.Ball;
+import pong.game.Field;
+import pong.game.Paddle;
 
-public class FxElements {
+public class GameElements {
 
     private Rectangle paddleP1;
     private Rectangle paddleP2;
@@ -54,7 +54,7 @@ public class FxElements {
     private void initializeBallElement() {
         ballElement = new Circle();
         ballElement.setFill(Color.WHITE);
-        ballElement.setRadius(Ball.getBALL_DIAMETER());
+        ballElement.setRadius(Ball.getBallDiameter());
     }
 
     private void initializePaddles() {
@@ -63,13 +63,13 @@ public class FxElements {
     }
 
     private void initializePaddleP1() {
-        paddleP1 = new Rectangle(Paddle.getPADDLE_WIDTH(), Paddle.getPADDLE_HEIGHT());
+        paddleP1 = new Rectangle(Paddle.getWIDTH(), Paddle.getHEIGHT());
         paddleP1.setFill(Color.WHITE);
         paddleP1.setX(100);
     }
 
     private void initializePaddleP2() {
-        paddleP2 = new Rectangle(Paddle.getPADDLE_WIDTH(), Paddle.getPADDLE_HEIGHT());
+        paddleP2 = new Rectangle(Paddle.getWIDTH(), Paddle.getHEIGHT());
         paddleP2.setFill(Color.WHITE);
         paddleP2.setX(Field.getWIDTH() - 100);
     }
