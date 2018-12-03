@@ -10,6 +10,8 @@ hetkellä työn alla.
 
 [Työaikakirjanpito](https://github.com/SkarpAnton/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
+[Arkkitehtuuri](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 
 ## Komentorivitoiminnotn (täysin kopitoitu referenssisovelluksesta)
 
