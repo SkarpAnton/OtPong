@@ -24,7 +24,7 @@ public class GameController {
         elements = new GameElements();
         root = elements.createGameRoot();
         scene = new Scene(root, Field.getWIDTH(), Field.getHEIGHT());
-        scene.getStylesheets().add("paneStyle.css");
+        scene.getStylesheets().add("css/paneStyle.css");
         setKeyEventsToScene();
         startTimer();
     }
