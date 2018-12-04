@@ -13,14 +13,14 @@ public class AI {
 
         if (ball.getY() - Paddle.getHEIGHT() / 2 > y
                 && y < Field.getHEIGHT() - Paddle.getHEIGHT()) {
-            if(ball.getY() > y) {
+            if (ball.getY() > y) {
                 y += 3;
-            } 
+            }
             y += 1;
         } else if (ball.getY() - Paddle.getHEIGHT() / 2 < y && y > 0) {
-            if(ball.getY() < y) {
+            if (ball.getY() < y) {
                 y -= 3;
-            } 
+            }
             y -= 1;
         }
     }
