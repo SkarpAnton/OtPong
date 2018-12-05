@@ -12,6 +12,7 @@ public class StartingMenuController extends MenuController {
 
     public StartingMenuController(StartingMenuElements menuElements) {
         super(menuElements.getMenu());
+        this.menuElements = menuElements;
     }
 
     @Override

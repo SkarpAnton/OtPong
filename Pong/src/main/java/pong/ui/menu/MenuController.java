@@ -13,48 +13,48 @@ public abstract class MenuController {
     protected Stage stage;
     protected int currentElement = 0;
     protected MenuBox menu;
-    
+
     protected abstract void addAdditionalChildren(Pane root);
 
     protected abstract void activate();
-    
+
     public MenuController(MenuBox menu) {
         this.menu = menu;
     }
-    
+
     public void run(Stage stage) throws Exception {
         this.stage = stage;
-        stage.setScene(createScene());        
+        stage.setScene(createScene());
         stage.show();
     }
-    
+
     protected Scene createScene() {
         Scene scene = new Scene(createRoot());
         scene.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.UP) {
                 up();
             }
-            
+
             if (event.getCode() == KeyCode.DOWN) {
                 down();
             }
-            
+
             if (event.getCode() == KeyCode.ENTER) {
                 activate();
             }
         });
         return scene;
     }
-    
+
     protected Parent createRoot() {
         Pane root = new Pane();
         root.setPrefSize(Field.getWIDTH(), Field.getHEIGHT());
-        Rectangle background = new Rectangle(Field.getWIDTH(), Field.getHEIGHT());        
+        Rectangle background = new Rectangle(Field.getWIDTH(), Field.getHEIGHT());
         root.getChildren().addAll(background, menu);
         addAdditionalChildren(root);
         return root;
     }
-    
+
     protected void up() {
         if (currentElement > 0) {
             menu.deactivate(currentElement);
@@ -62,7 +62,7 @@ public abstract class MenuController {
             menu.activate(currentElement);
         }
     }
-    
+
     protected void down() {
         if (currentElement < menu.getChildren().size() - 1) {
             menu.deactivate(currentElement);
@@ -70,5 +70,5 @@ public abstract class MenuController {
             menu.activate(currentElement);
         }
     }
-    
+
 }
