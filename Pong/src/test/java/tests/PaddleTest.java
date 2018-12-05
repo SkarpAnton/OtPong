@@ -2,18 +2,18 @@ package tests;
 
 
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import pong.game.User;
 
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pong.game.Field;
 import pong.game.Paddle;
 
 public class PaddleTest {
 
     private User paddle;
-    private final int frameHeight = 800;
+    private final int frameHeight = Field.getHEIGHT();
 
     @Before
     public void setUp() {

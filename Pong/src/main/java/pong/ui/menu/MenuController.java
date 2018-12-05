@@ -1,6 +1,5 @@
 package pong.ui.menu;
 
-import pong.ui.menu.MenuBox;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
@@ -12,7 +11,7 @@ import pong.game.Field;
 public abstract class MenuController {
 
     protected Stage stage;
-    protected int currentItem = 0;
+    protected int currentElement = 0;
     protected MenuBox menu;
     
     protected abstract void addAdditionalChildren(Pane root);
@@ -57,18 +56,18 @@ public abstract class MenuController {
     }
     
     protected void up() {
-        if (currentItem > 0) {
-            menu.deactivate(currentItem);
-            currentItem--;
-            menu.activate(currentItem);
+        if (currentElement > 0) {
+            menu.deactivate(currentElement);
+            currentElement--;
+            menu.activate(currentElement);
         }
     }
     
     protected void down() {
-        if (currentItem < menu.getChildren().size() - 1) {
-            menu.deactivate(currentItem);
-            currentItem++;
-            menu.activate(currentItem);
+        if (currentElement < menu.getChildren().size() - 1) {
+            menu.deactivate(currentElement);
+            currentElement++;
+            menu.activate(currentElement);
         }
     }
     

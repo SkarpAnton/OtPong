@@ -6,18 +6,16 @@ import pong.ui.game.GameController;
 
 public class DifficultyController extends MenuController {
 
-    private final DifficultyElements elements;
     private final Boolean twoPlayergame;
 
     public DifficultyController(DifficultyElements elements, boolean twoPlayerGame) {
         super(elements.getSettings());
-        this.elements = elements;
         this.twoPlayergame = twoPlayerGame;
     }
 
     @Override
     protected void activate() {
-        switch (currentItem) {
+        switch (currentElement) {
             case 0:
                 int slow = 6;
                 transitionToGame(slow);
