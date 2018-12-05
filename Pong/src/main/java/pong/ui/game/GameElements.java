@@ -3,6 +3,7 @@ package pong.ui.game;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -17,6 +18,7 @@ public class GameElements {
     private Circle ballElement;
     private Text p1ScoreText;
     private Text p2ScoreText;
+    private Line centerLine;
 
     public Pane createGameRoot() {
         initializeElements();
@@ -27,6 +29,7 @@ public class GameElements {
         initializeBallElement();
         initializePaddles();
         initializeScoreElements();
+        initializeCenterLine();
 
     }
 
@@ -74,6 +77,14 @@ public class GameElements {
         paddleP2.setX(Field.getWIDTH() - 100);
     }
 
+    private void initializeCenterLine() {
+        centerLine = new Line(Field.getWIDTH() / 2, 0, Field.getWIDTH() / 2,
+                Field.getHEIGHT());
+
+        centerLine.getStrokeDashArray().addAll(30d, 30d);
+        centerLine.setStroke(Color.WHITE);
+    }
+
     private Pane createPane() {
         Pane root = new Pane();
         root.getStyleClass().add("pane");
@@ -82,6 +93,7 @@ public class GameElements {
         root.getChildren().add(ballElement);
         root.getChildren().add(p1ScoreText);
         root.getChildren().add(p2ScoreText);
+        root.getChildren().add(centerLine);
         return root;
     }
 

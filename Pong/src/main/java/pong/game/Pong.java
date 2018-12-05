@@ -8,6 +8,8 @@ public class Pong {
     private int playerTwoScore = 0;
     private final User playerOne = new User(KeyCode.W, KeyCode.S);
     private final User playerTwo = new User(KeyCode.UP, KeyCode.DOWN);
+    private int countDownFromGoal = 100;
+    private boolean goalScored;
     private final Boolean twoPlayerGame;
     private final Ball ball;
     private final AI ai;
@@ -37,7 +39,7 @@ public class Pong {
     public int getPlayerTwoScore() {
         return playerTwoScore;
     }
-    
+
     public void move() {
         if (twoPlayerGame) {
             ball.move(playerOne.getUpdatedHeight(), playerTwo.getUpdatedHeight());
@@ -45,18 +47,36 @@ public class Pong {
             ai.move();
             ball.move(playerOne.getUpdatedHeight(), ai.getY());
         }
-        
+
     }
 
     public void scored() {
         if (ball.getX() <= 0) {
-            playerTwoScore++;
-            ball.newStart();
+            playerOneScore = scoreGoal(playerOneScore);
+
         }
         if (ball.getX() >= Field.getWIDTH()) {
-            playerOneScore++;
+            playerTwoScore = scoreGoal(playerTwoScore);
+        }
+    }
+
+    private int scoreGoal(int playerScore) {
+        if (!goalScored) {
+            playerScore++;
+            goalScored = true;
+        } else if (countDownIsDone()) {
             ball.newStart();
         }
+        return playerScore;
+    }
+
+    private boolean countDownIsDone() {
+        if (countDownFromGoal <= 0) {
+            countDownFromGoal = 100;
+            return true;
+        }
+        countDownFromGoal--;
+        return false;
     }
 
     public boolean isPlayerOneWinner() {
