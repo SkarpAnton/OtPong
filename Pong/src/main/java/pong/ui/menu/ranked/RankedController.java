@@ -35,8 +35,10 @@ public class RankedController extends MenuController {
         if (currentElement == 2) {
             String playerOneName = rankedElements.getP1TextField().getText();
             String playerTwoName = rankedElements.getP2TextField().getText();
-            if (playerOneName.isEmpty() || playerTwoName.isEmpty()) {
-                rankedElements.getErrorMessage().setVisible(true);
+            if (playerOneName.isEmpty() || playerTwoName.isEmpty()) {                
+                rankedElements.missingName();
+            } else if (containsSpecialChars(playerOneName, playerTwoName)) {
+                rankedElements.usesSpecialChars();
             } else {
                 RatingHandler ranked = new RatingHandler(playerOneName, playerTwoName);
                 GameController gameController
@@ -44,6 +46,11 @@ public class RankedController extends MenuController {
                 stage.setScene(gameController.getScene());
             }
         }
+    }
+    
+    private boolean containsSpecialChars(String playerOneName, String playerTwoName) {
+        return !playerOneName.matches("[a-zA-Z0-9]*") || 
+                !playerTwoName.matches("[a-zA-Z0-9]*");
     }
 
 }

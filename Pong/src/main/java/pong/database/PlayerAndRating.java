@@ -1,12 +1,11 @@
-
 package pong.database;
 
-public class Rating {
-    
+public class PlayerAndRating implements Comparable<PlayerAndRating> {
+
     private final String name;
     private final int rating;
 
-    public Rating(String name, int ranking) {
+    public PlayerAndRating(String name, int ranking) {
         this.name = name;
         this.rating = ranking;
     }
@@ -18,6 +17,10 @@ public class Rating {
     public int getRating() {
         return rating;
     }
-    
-    
+
+    @Override
+    public int compareTo(PlayerAndRating comparedTo) {
+        return comparedTo.getRating() - rating;
+    }
+
 }

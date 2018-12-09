@@ -7,18 +7,21 @@ public class Pong {
 
     private int playerOneScore = 0;
     private int playerTwoScore = 0;
+    private final int gamePlayedTo = 1;
     private final User playerOne = new User(KeyCode.W, KeyCode.S);
     private final User playerTwo = new User(KeyCode.UP, KeyCode.DOWN);
     private int countDownFromGoal = 100;
+    private final RatingHandler ratingHandler;
     private boolean goalScored;
     private final Boolean twoPlayerGame;
     private final Ball ball;
     private final AI ai;
 
-    public Pong(int ballSpeed, boolean twoPlayers, RatingHandler ranked) {
+    public Pong(int ballSpeed, boolean twoPlayers, RatingHandler ratingHandler) {
         this.twoPlayerGame = twoPlayers;
         ball = new Ball(ballSpeed);
         ai = new AI(ball);
+        this.ratingHandler = ratingHandler;
     }
 
     public Ball getBall() {
@@ -54,6 +57,12 @@ public class Pong {
         }
 
     }
+    
+    public void updateRating() {
+        if (ratingHandler != null) {
+            ratingHandler.updateRatings(isPlayerOneWinner());
+        }
+    }
 
     public void scored() {
         if (ball.getX() <= 0) {
@@ -86,11 +95,11 @@ public class Pong {
     }
 
     public boolean isPlayerOneWinner() {
-        return playerOneScore >= 11;
+        return playerOneScore >= gamePlayedTo;
     }
 
     public boolean isPlayerTwoWinner() {
-        return playerTwoScore >= 11;
+        return playerTwoScore >= gamePlayedTo;
     }
 
     public boolean hasGameEnded() {

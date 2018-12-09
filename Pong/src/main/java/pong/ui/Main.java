@@ -8,7 +8,7 @@ import pong.ui.menu.starting.StartingMenuController;
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         stage.setResizable(false);
         StartingMenuController startingMenuController
                 = new StartingMenuController(new StartingMenuElements());

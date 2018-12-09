@@ -23,12 +23,10 @@ public class GameEndController extends MenuController {
 
     @Override
     protected void activate() {
-        try {
-            StartingMenuController startingMenuController
-                    = new StartingMenuController(new StartingMenuElements());
-            startingMenuController.run(stage);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+
+        StartingMenuController startingMenuController
+                = new StartingMenuController(new StartingMenuElements());
+        startingMenuController.run(stage);
+
     }
 }

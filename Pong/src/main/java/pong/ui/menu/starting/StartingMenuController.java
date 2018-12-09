@@ -4,6 +4,8 @@ import javafx.scene.layout.Pane;
 import pong.ui.menu.MenuController;
 import pong.ui.menu.difficulty.DifficultyController;
 import pong.ui.menu.difficulty.DifficultyElements;
+import pong.ui.menu.leaderboard.LeaderboardController;
+import pong.ui.menu.leaderboard.LeaderboardElements;
 import pong.ui.menu.ranked.RankedController;
 import pong.ui.menu.ranked.RankedElements;
 
@@ -17,31 +19,27 @@ public class StartingMenuController extends MenuController {
     }
 
     @Override
-    protected void activate() {
-        DifficultyController difficultyController;
-        try {
-            switch (currentElement) {
-                case 0:
-                    difficultyController
-                            = new DifficultyController(new DifficultyElements(), false);
-                    difficultyController.run(stage);
-                    break;
-                case 1:
-                    difficultyController
-                            = new DifficultyController(new DifficultyElements(), true);
-                    difficultyController.run(stage);
-                    break;
-                case 2:
-                    RankedController rankedController
-                            = new RankedController(new RankedElements());
-                    rankedController.run(stage);
-                    break;
-                case 3:
-                    System.exit(0);
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
+    protected void activate() { 
+        switch (currentElement) {
+            case 0:
+                runController(new DifficultyController(new DifficultyElements(), false));
+                break;
+            case 1:
+                runController(new DifficultyController(new DifficultyElements(), true));
+                break;
+            case 2:
+                runController(new RankedController(new RankedElements()));
+                break;
+            case 3:
+                runController(new LeaderboardController(new LeaderboardElements()));
+                break;
+            case 4:
+                System.exit(0);
         }
+    }
+    
+    private void runController(MenuController menuController) {
+        menuController.run(stage);
     }
 
     @Override

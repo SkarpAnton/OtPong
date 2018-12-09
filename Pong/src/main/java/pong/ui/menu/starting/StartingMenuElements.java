@@ -27,6 +27,7 @@ public class StartingMenuElements extends MenuElements {
         this.addTextElement(new Text("One player"));
         this.addTextElement(new Text("Two Player"));
         this.addTextElement(new Text("Ranked"));
+        this.addTextElement(new Text("Leaderboard"));
         this.addTextElement(new Text("Exit"));
     }
 

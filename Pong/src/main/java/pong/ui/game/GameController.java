@@ -53,7 +53,6 @@ public class GameController {
             @Override
             public void handle(long currentNanoTime) {
                 if (pong.hasGameEnded()) {
-                    timer.stop();
                     gameEnd();
                 } else {
                     updateGame();
@@ -64,6 +63,8 @@ public class GameController {
     }
 
     private void gameEnd() {
+        timer.stop();
+        pong.updateRating();
         try {
             if (pong.isPlayerOneWinner()) {
                 GameEndController gameEndController = new GameEndController(

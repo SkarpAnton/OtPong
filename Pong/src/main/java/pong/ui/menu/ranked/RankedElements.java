@@ -15,6 +15,8 @@ public class RankedElements extends MenuElements {
     private TextField p1TextField;
     private TextField p2TextField;
     private Text errorMessage;
+    private String missingName;
+    private String nameUsesSpecialChars;
 
     public RankedElements() {
         intializeMenu();
@@ -31,13 +33,15 @@ public class RankedElements extends MenuElements {
     }
     
     private void initializeErrorMessage() {
-        errorMessage = new Text("Both player one and player two should have defined names");
+        errorMessage = new Text();
         errorMessage.setFont(Font.font("Verdana", 20));
         errorMessage.setTextAlignment(TextAlignment.CENTER);
         errorMessage.setTranslateX(300);
         errorMessage.setTranslateY(100);
         errorMessage.setFill(Color.WHITE);
         errorMessage.setVisible(false);
+        missingName = "Both player one and player two should have defined names";
+        nameUsesSpecialChars = "Name should consist of only letters and numbers";
     }
 
     private void initializeTextFields() {
@@ -71,6 +75,16 @@ public class RankedElements extends MenuElements {
 
     public Text getErrorMessage() {
         return errorMessage;
+    }
+    
+    public void missingName() {
+        errorMessage.setText(missingName);
+        errorMessage.setVisible(true);
+    }
+    
+    public void usesSpecialChars() {
+        errorMessage.setText(nameUsesSpecialChars);
+        errorMessage.setVisible(true);
     }
 
     @Override

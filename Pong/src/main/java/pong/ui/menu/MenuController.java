@@ -22,7 +22,7 @@ public abstract class MenuController {
         this.menu = menu;
     }
 
-    public void run(Stage stage) throws Exception {
+    public void run(Stage stage) {
         this.stage = stage;
         stage.setScene(createScene());
         stage.show();
