@@ -1,5 +1,6 @@
 package pong.game;
 
+import pong.database.RatingHandler;
 import javafx.scene.input.KeyCode;
 
 public class Pong {
@@ -14,7 +15,7 @@ public class Pong {
     private final Ball ball;
     private final AI ai;
 
-    public Pong(int ballSpeed, boolean twoPlayers) {
+    public Pong(int ballSpeed, boolean twoPlayers, RatingHandler ranked) {
         this.twoPlayerGame = twoPlayers;
         ball = new Ball(ballSpeed);
         ai = new AI(ball);
@@ -40,6 +41,10 @@ public class Pong {
         return playerTwoScore;
     }
 
+    public Boolean isTwoPlayerGame() {
+        return twoPlayerGame;
+    }
+
     public void move() {
         if (twoPlayerGame) {
             ball.move(playerOne.getUpdatedHeight(), playerTwo.getUpdatedHeight());
@@ -52,11 +57,11 @@ public class Pong {
 
     public void scored() {
         if (ball.getX() <= 0) {
-            playerOneScore = scoreGoal(playerOneScore);
+            playerTwoScore = scoreGoal(playerTwoScore);
 
         }
         if (ball.getX() >= Field.getWIDTH()) {
-            playerTwoScore = scoreGoal(playerTwoScore);
+            playerOneScore = scoreGoal(playerOneScore);
         }
     }
 
@@ -66,6 +71,7 @@ public class Pong {
             goalScored = true;
         } else if (countDownIsDone()) {
             ball.newStart();
+            goalScored = false;
         }
         return playerScore;
     }

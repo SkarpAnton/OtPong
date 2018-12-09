@@ -1,6 +1,7 @@
 package pong.ui.menu.difficulty;
 
 import javafx.scene.layout.Pane;
+import pong.game.Speeds;
 import pong.ui.menu.MenuController;
 import pong.ui.game.GameController;
 
@@ -9,7 +10,7 @@ public class DifficultyController extends MenuController {
     private final Boolean twoPlayergame;
 
     public DifficultyController(DifficultyElements elements, boolean twoPlayerGame) {
-        super(elements.getSettings());
+        super(elements);
         this.twoPlayergame = twoPlayerGame;
     }
 
@@ -17,31 +18,27 @@ public class DifficultyController extends MenuController {
     protected void activate() {
         switch (currentElement) {
             case 0:
-                int slow = 6;
-                transitionToGame(slow);
+                transitionToGame(Speeds.getSlow());
                 break;
             case 1:
-                int normal = 8;
-                transitionToGame(normal);
+                transitionToGame(Speeds.getNormal());
                 break;
             case 2:
-                int fast = 12;
-                transitionToGame(fast);
+                transitionToGame(Speeds.getFast());
                 break;
             case 3:
-                int superFast = 15;
-                transitionToGame(superFast);
+                transitionToGame(Speeds.getSuperFast());
                 break;
         }
     }
    
     private void transitionToGame(int speed) {
-        GameController gameController = new GameController(twoPlayergame, speed, stage);
+        GameController gameController = new GameController(twoPlayergame, speed, null, stage);
         stage.setScene(gameController.getScene());
     }
 
     @Override
-    protected void addAdditionalChildren(Pane root) {
+    protected void addAndModifyChildren(Pane root) {
     }
 
 }

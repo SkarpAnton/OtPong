@@ -7,6 +7,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import pong.game.Field;
 import pong.game.Pong;
+import pong.database.RatingHandler;
+import pong.ui.menu.endgame.GameEndController;
+import pong.ui.menu.endgame.GameEndElements;
 
 public class GameController {
 
@@ -14,17 +17,16 @@ public class GameController {
     private final GameElements elements;
     private final Pane root;
     private final Scene scene;
-    private final Boolean twoPlayerGame;
     private final Stage stage;
+    private AnimationTimer timer;
 
-    public GameController(Boolean twoPlayerGame, int ballSpeed, Stage stage) {
+    public GameController(Boolean twoPlayerGame, int ballSpeed, RatingHandler ranked, Stage stage) {
         this.stage = stage;
-        this.twoPlayerGame = twoPlayerGame;
-        pong = new Pong(ballSpeed, twoPlayerGame);
+        pong = new Pong(ballSpeed, twoPlayerGame, ranked);
         elements = new GameElements();
         root = elements.createGameRoot();
         scene = new Scene(root, Field.getWIDTH(), Field.getHEIGHT());
-        scene.getStylesheets().add("css/paneStyle.css");
+        scene.getStylesheets().add("css/pane_style.css");
         setKeyEventsToScene();
         startTimer();
     }
@@ -47,22 +49,52 @@ public class GameController {
     }
 
     private void startTimer() {
-        new AnimationTimer() {
+        timer = new AnimationTimer() {
             @Override
             public void handle(long currentNanoTime) {
-                pong.move();
-                elements.getPaddleP1().setY(pong.getPlayerOne().getUpdatedHeight());
-                if (twoPlayerGame) {
-                    elements.getPaddleP2().setY(pong.getPlayerTwo().getUpdatedHeight());
+                if (pong.hasGameEnded()) {
+                    timer.stop();
+                    gameEnd();
                 } else {
-                    elements.getPaddleP2().setY(pong.getAi().getY());
+                    updateGame();
                 }
-                updateBall();
-                updateScore();
             }
-        }.start();
+        };
+        timer.start();
     }
-    
+
+    private void gameEnd() {
+        try {
+            if (pong.isPlayerOneWinner()) {
+                GameEndController gameEndController = new GameEndController(
+                        new GameEndElements(pong.getPlayerOneScore(),
+                                pong.getPlayerTwoScore(), "Player one"));
+
+                gameEndController.run(stage);
+
+            } else {
+                GameEndController gameEndController = new GameEndController(
+                        new GameEndElements(pong.getPlayerOneScore(),
+                                pong.getPlayerTwoScore(), "Player two"));
+                gameEndController.run(stage);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void updateGame() {
+        pong.move();
+        elements.getPaddleP1().setY(pong.getPlayerOne().getUpdatedHeight());
+        if (pong.isTwoPlayerGame()) {
+            elements.getPaddleP2().setY(pong.getPlayerTwo().getUpdatedHeight());
+        } else {
+            elements.getPaddleP2().setY(pong.getAi().getY());
+        }
+        updateBall();
+        updateScore();
+    }
+
     private void updateBall() {
         elements.getBallElement().setCenterX(pong.getBall().getX());
         elements.getBallElement().setCenterY(pong.getBall().getY());

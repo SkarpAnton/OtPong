@@ -1,0 +1,9 @@
+.black-background {
+    -fx-background-color:  black;
+}
+.white-text {
+    -fx-text-inner-color: white;
+}
+.gray-text {
+    -fx-text-inner-color: gray;
+}

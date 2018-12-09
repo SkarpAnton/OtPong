@@ -9,6 +9,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        stage.setResizable(false);
         StartingMenuController startingMenuController
                 = new StartingMenuController(new StartingMenuElements());
         startingMenuController.run(stage);

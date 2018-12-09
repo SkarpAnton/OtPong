@@ -4,12 +4,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import pong.game.Field;
-import pong.ui.menu.MenuBox;
+import pong.ui.menu.MenuElements;
 
-public class StartingMenuElements {
+public class StartingMenuElements extends MenuElements {
 
     private Text title;
-    private MenuBox menu;
 
     public StartingMenuElements() {
         initializeTitle();
@@ -25,14 +24,10 @@ public class StartingMenuElements {
     }
 
     private void initializeMenu() {
-        menu = new MenuBox();
-        menu.addTextElement(new Text("One player"));
-        menu.addTextElement(new Text("Two Player"));
-        menu.addTextElement(new Text("Exit"));
-    }
-
-    public MenuBox getMenu() {
-        return menu;
+        this.addTextElement(new Text("One player"));
+        this.addTextElement(new Text("Two Player"));
+        this.addTextElement(new Text("Ranked"));
+        this.addTextElement(new Text("Exit"));
     }
 
     public Text getTitle() {

@@ -3,8 +3,8 @@ package pong.ui.menu;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import pong.game.Field;
 
@@ -12,13 +12,13 @@ public abstract class MenuController {
 
     protected Stage stage;
     protected int currentElement = 0;
-    protected MenuBox menu;
+    protected MenuElements menu;
 
-    protected abstract void addAdditionalChildren(Pane root);
+    protected abstract void addAndModifyChildren(Pane root);
 
     protected abstract void activate();
 
-    public MenuController(MenuBox menu) {
+    public MenuController(MenuElements menu) {
         this.menu = menu;
     }
 
@@ -30,28 +30,33 @@ public abstract class MenuController {
 
     protected Scene createScene() {
         Scene scene = new Scene(createRoot());
+        scene.getStylesheets().add("css/pane_style.css");
         scene.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.UP) {
-                up();
-            }
-
-            if (event.getCode() == KeyCode.DOWN) {
-                down();
-            }
-
-            if (event.getCode() == KeyCode.ENTER) {
-                activate();
-            }
+            action(event);
         });
         return scene;
     }
 
+    protected void action(KeyEvent event) {
+        if (event.getCode() == KeyCode.UP) {
+            up();
+        }
+
+        if (event.getCode() == KeyCode.DOWN) {
+            down();
+        }
+
+        if (event.getCode() == KeyCode.ENTER) {
+            activate();
+        }
+    }
+
     protected Parent createRoot() {
         Pane root = new Pane();
+        root.getStyleClass().add("black-background");
         root.setPrefSize(Field.getWIDTH(), Field.getHEIGHT());
-        Rectangle background = new Rectangle(Field.getWIDTH(), Field.getHEIGHT());
-        root.getChildren().addAll(background, menu);
-        addAdditionalChildren(root);
+        root.getChildren().addAll(menu);
+        addAndModifyChildren(root);
         return root;
     }
 

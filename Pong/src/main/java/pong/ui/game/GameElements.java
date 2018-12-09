@@ -84,10 +84,12 @@ public class GameElements {
         centerLine.getStrokeDashArray().addAll(30d, 30d);
         centerLine.setStroke(Color.WHITE);
     }
+    
+    
 
     private Pane createPane() {
         Pane root = new Pane();
-        root.getStyleClass().add("pane");
+        root.getStyleClass().add("black-background");
         root.getChildren().add(paddleP1);
         root.getChildren().add(paddleP2);
         root.getChildren().add(ballElement);
@@ -116,5 +118,6 @@ public class GameElements {
     public Text getP2ScoreText() {
         return p2ScoreText;
     }
+
 
 }

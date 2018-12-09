@@ -6,7 +6,7 @@ public class Ball {
 
     private final static int BALL_RADIUS = 12;
     private final Random rand = new Random();
-    private int startingDirection = rand.nextBoolean() ? 1 : -1;
+    private int direction = rand.nextBoolean() ? 1 : -1;
     private int timeFromHit = 30;
     private final double ballSpeed;
     private double ySpeed;
@@ -41,8 +41,8 @@ public class Ball {
         x = Field.getWIDTH() / 2;
         y = rand.nextInt(Field.getHEIGHT() - 100) + 50;
         ySpeed = rand.nextInt(7) - 3;
-        startingDirection *= -1;
-        xSpeed = startingDirection * (ballSpeed - Math.abs(ySpeed));
+        direction *= -1;
+        xSpeed = direction * (ballSpeed - Math.abs(ySpeed));
     }
 
     public int getX() {
@@ -70,6 +70,7 @@ public class Ball {
     }
 
     private void collision(int playerY) {
+        direction *= -1;
         ySpeed = ySpeedChangeDueToPositionOfHit(playerY);
         timeFromHit = 0;
     }

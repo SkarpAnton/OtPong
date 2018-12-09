@@ -9,12 +9,12 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import pong.game.Field;
 
-public class MenuBox extends VBox {
+public class MenuElements extends VBox {
 
-    private final List<Text> texts = new ArrayList<>();
+    protected final List<Text> texts = new ArrayList<>();
 
-    public MenuBox() {
-        this.setAlignment(Pos.TOP_CENTER);
+    public MenuElements() {
+        this.setAlignment(Pos.CENTER);
         this.setTranslateX(Field.getWIDTH() / 2 - 150);
         this.setTranslateY(Field.getHEIGHT() / 3);
     }
@@ -37,4 +37,5 @@ public class MenuBox extends VBox {
     public void deactivate(int index) {
         texts.get(index).setFill(Color.GREY);
     }
+    
 }
