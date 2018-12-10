@@ -7,7 +7,7 @@ public class Pong {
 
     private int playerOneScore = 0;
     private int playerTwoScore = 0;
-    private final int gamePlayedTo = 1;
+    private final int gamePlayedTo = 11;
     private final User playerOne = new User(KeyCode.W, KeyCode.S);
     private final User playerTwo = new User(KeyCode.UP, KeyCode.DOWN);
     private int countDownFromGoal = 100;

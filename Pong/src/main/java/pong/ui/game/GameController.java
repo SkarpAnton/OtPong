@@ -2,6 +2,7 @@ package pong.ui.game;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -10,6 +11,8 @@ import pong.game.Pong;
 import pong.database.RatingHandler;
 import pong.ui.menu.endgame.GameEndController;
 import pong.ui.menu.endgame.GameEndElements;
+import pong.ui.menu.starting.StartingMenuController;
+import pong.ui.menu.starting.StartingMenuElements;
 
 public class GameController {
 
@@ -39,15 +42,25 @@ public class GameController {
         scene.setOnKeyPressed((KeyEvent e) -> {
             pong.getPlayerOne().move(e.getCode());
             pong.getPlayerTwo().move(e.getCode());
-
+            openMenu(e.getCode());
         });
 
         scene.setOnKeyReleased((KeyEvent e) -> {
             pong.getPlayerOne().stop(e.getCode());
             pong.getPlayerTwo().stop(e.getCode());
         });
+        
     }
-
+    
+    private void openMenu(KeyCode key) {
+        if (KeyCode.ESCAPE == key) {
+            timer.stop();
+            StartingMenuController startingMenuController
+                    = new StartingMenuController(new StartingMenuElements());
+            startingMenuController.run(stage);
+        }
+    }
+    
     private void startTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -67,21 +80,20 @@ public class GameController {
         pong.updateRating();
         try {
             if (pong.isPlayerOneWinner()) {
-                GameEndController gameEndController = new GameEndController(
-                        new GameEndElements(pong.getPlayerOneScore(),
-                                pong.getPlayerTwoScore(), "Player one"));
-
-                gameEndController.run(stage);
-
+                runEndGameScreen("Player one");
             } else {
-                GameEndController gameEndController = new GameEndController(
-                        new GameEndElements(pong.getPlayerOneScore(),
-                                pong.getPlayerTwoScore(), "Player two"));
-                gameEndController.run(stage);
+                runEndGameScreen("Player two");
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+  
+    private void runEndGameScreen(String winner) {
+        GameEndController gameEndController = new GameEndController(
+                new GameEndElements(pong.getPlayerOneScore(),
+                        pong.getPlayerTwoScore(), winner));
+        gameEndController.run(stage);
     }
 
     private void updateGame() {

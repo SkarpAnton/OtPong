@@ -11,7 +11,7 @@ import pong.ui.menu.ranked.RankedElements;
 
 public class StartingMenuController extends MenuController {
 
-    private StartingMenuElements menuElements;
+    private final StartingMenuElements menuElements;
 
     public StartingMenuController(StartingMenuElements menuElements) {
         super(menuElements);

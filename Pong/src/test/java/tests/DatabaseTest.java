@@ -69,9 +69,9 @@ public class DatabaseTest {
     }
     
     @Test
-    public void testGetRatings() {
-        List<PlayerAndRating> ratings = dao.getRatings();
-        assertTrue(10 == ratings.get(0).getRating() && 20 == ratings.get(1).getRating());
+    public void testTopTen() {
+        List<PlayerAndRating> ratings = dao.getTopTen();
+        assertTrue(20 == ratings.get(0).getRating() && 10 == ratings.get(1).getRating());
     }
 
 }

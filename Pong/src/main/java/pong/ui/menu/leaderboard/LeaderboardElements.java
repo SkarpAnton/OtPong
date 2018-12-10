@@ -1,6 +1,5 @@
 package pong.ui.menu.leaderboard;
 
-import java.util.Collections;
 import java.util.List;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -34,15 +33,14 @@ public class LeaderboardElements extends MenuElements {
         VBox elo = new VBox(createTableHeader("Elo"));
         leaderboard = new HBox(rankings, names, elo);
         leaderboard.setSpacing(50);
-        List<PlayerAndRating> playerRatings = dao.getRatings();
-        Collections.sort(playerRatings);
+        List<PlayerAndRating> playerRatings = dao.getTopTen();
         for (int i = 1; i <= 10; i++) {
-            PlayerAndRating playerRating = playerRatings.get(i);
+            PlayerAndRating playerRating = playerRatings.get(i-1);
             rankings.getChildren().add(createTableElement(i + ""));
             elo.getChildren().add(createTableElement(playerRating.getRating() + ""));
             names.getChildren().add(createTableElement(playerRating.getName()));
         }
-        leaderboard.setTranslateX(200);
+        leaderboard.setTranslateX(270);
         leaderboard.setTranslateY(150);
     }
 

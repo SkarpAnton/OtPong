@@ -22,6 +22,7 @@ public class RankedController extends MenuController {
         setKeyPressesOnTextField(rankedElements.getP2TextField());
         root.getChildren().add(rankedElements.getTextFields());
         root.getChildren().add(rankedElements.getErrorMessage());
+        root.getChildren().add(rankedElements.getTitle());
     }
 
     private void setKeyPressesOnTextField(TextField textField) {
@@ -32,19 +33,17 @@ public class RankedController extends MenuController {
 
     @Override
     protected void activate() {
-        if (currentElement == 2) {
-            String playerOneName = rankedElements.getP1TextField().getText();
-            String playerTwoName = rankedElements.getP2TextField().getText();
-            if (playerOneName.isEmpty() || playerTwoName.isEmpty()) {                
-                rankedElements.missingName();
-            } else if (containsSpecialChars(playerOneName, playerTwoName)) {
-                rankedElements.usesSpecialChars();
-            } else {
-                RatingHandler ranked = new RatingHandler(playerOneName, playerTwoName);
-                GameController gameController
-                        = new GameController(true, Speeds.getFast(), ranked, stage);
-                stage.setScene(gameController.getScene());
-            }
+        String playerOneName = rankedElements.getP1TextField().getText();
+        String playerTwoName = rankedElements.getP2TextField().getText();
+        if (playerOneName.isEmpty() || playerTwoName.isEmpty()) {
+            rankedElements.missingName();
+        } else if (containsSpecialChars(playerOneName, playerTwoName)) {
+            rankedElements.usesSpecialChars();
+        } else {
+            RatingHandler ranked = new RatingHandler(playerOneName, playerTwoName);
+            GameController gameController
+                    = new GameController(true, Speeds.getFast(), ranked, stage);
+            stage.setScene(gameController.getScene());
         }
     }
     

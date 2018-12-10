@@ -14,12 +14,14 @@ public class RankedElements extends MenuElements {
     private VBox textFields;
     private TextField p1TextField;
     private TextField p2TextField;
+    private Text title;
     private Text errorMessage;
     private String missingName;
     private String nameUsesSpecialChars;
 
     public RankedElements() {
         intializeMenu();
+        initializeTitle();
         initializeErrorMessage();
         initializeTextFields();
     }
@@ -27,9 +29,15 @@ public class RankedElements extends MenuElements {
     private void intializeMenu() {
         this.addTextElement(new Text("P1:              "));
         this.addTextElement(new Text("P2:              "));
-        Text play = new Text("Play");
-        play.setTextAlignment(TextAlignment.RIGHT);
-        this.addTextElement(play);
+    }
+    
+    private void initializeTitle() {
+        title = new Text("Names");
+        title.setFont(Font.font("Verdana", 80));
+        title.setTextAlignment(TextAlignment.CENTER);
+        title.setTranslateX(440);
+        title.setTranslateY(100);
+        title.setFill(Color.WHITE);
     }
     
     private void initializeErrorMessage() {
@@ -37,7 +45,7 @@ public class RankedElements extends MenuElements {
         errorMessage.setFont(Font.font("Verdana", 20));
         errorMessage.setTextAlignment(TextAlignment.CENTER);
         errorMessage.setTranslateX(300);
-        errorMessage.setTranslateY(100);
+        errorMessage.setTranslateY(600);
         errorMessage.setFill(Color.WHITE);
         errorMessage.setVisible(false);
         missingName = "Both player one and player two should have defined names";
@@ -75,6 +83,10 @@ public class RankedElements extends MenuElements {
 
     public Text getErrorMessage() {
         return errorMessage;
+    }
+
+    public Text getTitle() {
+        return title;
     }
     
     public void missingName() {
