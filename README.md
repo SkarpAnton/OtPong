@@ -11,6 +11,7 @@ hetkellä työn alla.
 [Työaikakirjanpito](https://github.com/SkarpAnton/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 [Arkkitehtuuri](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Käyttöohje](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/kayttoohje.md)
 
 
 ## Komentorivitoiminnotn (täysin kopitoitu referenssisovelluksesta)
@@ -51,3 +52,12 @@ generoi hakemistoon _target_ suoritettavan jar-tiedoston
 ```
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
+### JavaDoc
+
+JavaDoc generoidaan komennolla
+
+```
+mvn javadoc:javadoc
+```
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
