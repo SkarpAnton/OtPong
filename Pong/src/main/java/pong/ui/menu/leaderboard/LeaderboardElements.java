@@ -35,7 +35,7 @@ public class LeaderboardElements extends MenuElements {
         leaderboard.setSpacing(50);
         List<PlayerAndRating> playerRatings = dao.getTopTen();
         for (int i = 1; i <= 10; i++) {
-            PlayerAndRating playerRating = playerRatings.get(i-1);
+            PlayerAndRating playerRating = playerRatings.get(i - 1);
             rankings.getChildren().add(createTableElement(i + ""));
             elo.getChildren().add(createTableElement(playerRating.getRating() + ""));
             names.getChildren().add(createTableElement(playerRating.getName()));
