@@ -9,9 +9,11 @@
 |26.11.|1 h| Toiminnalisuutta/ menun teko|
 |27.11.|2 h| Aloitin projektin uudestaan, koska huomasin, että pitikin käyttä javafx:ää, en ehtinyt lisätä menua|
 |28.11.|20 min| Main:in paikka oli muuttunut ja rikkoi ohjelman, sen korjaus. Muutin taustavärin mustaksi| 
-|3.11.|2 h| Aloitin aloitus menun ja jonkin verran refaktorointia|
-|4.11.|2h 30min| tein 'AI':n ja tein loppuun aloitus menun ja tein vaikeusaste menun|
-|4.11.|1 h|tein testejä ja refaktoroin koodia|
-|4.11.|30 min|tein dokumentaatiota|
-|yht|15h 40min|||
+|3.12.|2 h| Aloitin aloitus menun ja jonkin verran refaktorointia|
+|4.12.|2h 30min| tein 'AI':n ja tein loppuun aloitus menun ja tein vaikeusaste menun|
+|4.12.|1 h|tein testejä ja refaktoroin koodia|
+|9.12.|5 h|leaderboardin teko ja datbasen lisäys|
+|10.12|1 h|refaktorointia|
+|11.12|2 h|dokumenttien tekoa|
+|yht|22h 40min|||
 
