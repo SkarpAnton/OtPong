@@ -2,6 +2,10 @@ package pong.game;
 
 import java.util.Random;
 
+/**
+ * Ball for the game pong
+ */
+
 public class Ball {
 
     private final static int BALL_RADIUS = 12;
@@ -13,12 +17,23 @@ public class Ball {
     private double xSpeed;
     private double x;
     private double y;
-
+    
+    /**
+     * Constructor for the class Ball
+     * @param ballSpeed how much ball moves every time move is called
+     */
     public Ball(int ballSpeed) {
         this.ballSpeed = ballSpeed;
         newStart();
     }
-
+    
+    /**
+     * Moves the ball. Bounces of paddles and upper and lower side of the field.
+     * Fields side simply negates balls vertical momentum. Bounce from
+     * the paddle is calculated based on the position of the hit relative to paddle.
+     * @param playerOneY height of the middle of  the player one's paddle (y coordinate)
+     * @param playerTwoY height of the middle of  the player two's paddle (y coordinate)
+     */
     public void move(int playerOneY, int playerTwoY) {
         x += xSpeed;
         y += ySpeed;
@@ -36,7 +51,10 @@ public class Ball {
             xSpeed = -(ballSpeed - Math.abs(ySpeed));
         }
     }
-
+    
+    /**
+     * Sets values for the new start
+     */
     public void newStart() {
         x = Field.getWIDTH() / 2;
         y = rand.nextInt(Field.getHEIGHT() - 100) + 50;
