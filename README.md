@@ -15,50 +15,36 @@ hetkellä työn alla.
 [Käyttöohje](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/kayttoohje.md)
 
 
-## Komentorivitoiminnotn (täysin kopitoitu referenssisovelluksesta)
+## Komentorivikomennot
 
 ### Testaus
-
-Testit suoritetaan komennolla
 
 ```
 mvn test
 ```
 
-Testikattavuusraportti luodaan komennolla
+### Testikattavuus
 
 ```
 mvn jacoco:report
 ```
-Lisäsin halutun pluginin, mutta se rikkoi ainakin itselläni kattavuusraportin luomisen, joten jos on kattavuusraportin kanssa ongelmia niin voi yrittää poistaa surefire pluginin
 
-Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
-
-### Suoritettavan jarin generointi
-
-Komento
+### Jarin generointi
 
 ```
 mvn package
 ```
 
-generoi hakemistoon _target_ suoritettavan jar-tiedoston
-
 
 ### Checkstyle
-
 
 ```
  mvn jxr:jxr checkstyle:checkstyle
 ```
 
-Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
 ### JavaDoc
-
-JavaDoc generoidaan komennolla
 
 ```
 mvn javadoc:javadoc
 ```
 
-JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
