@@ -4,7 +4,7 @@
 
 ### Menu
 
-Menu sisältää kaksi luokkaa ja viisi pakkausta. Luokat ovate nimeltään MenuController ja MenuELements, molemmat luokat ovat abstrakteja.
+Menu sisältää kaksi luokkaa ja viisi pakkausta. Luokat ovat nimeltään MenuController ja MenuELements, molemmat luokat ovat abstrakteja.
 Kaikki viisi pakkausta siältävät vain kaksi luokkaa, jotka ovat nimeltään "pakkauksen nimi"Controller ja "pakkauksen nimi"Elements. Controller luokat perii MenuController:in ja elements luokat perii MenuElements:in. Jokainen pakkauksista on vastuussa yhdestä sivusta. 
 Elements luokassa on tarvittavat JavaFX eklementit ja controller luokassa on niihin liittyvä logiikka.
 
@@ -18,7 +18,7 @@ Menu luokka keskustelee pong.ui.game - ja pong.database pakkauksen kanssa. Pakka
 
 Ui.game pakkaus on vastuussa pelin näyttämisestä ja sen ajamisesta. Game pakkaus sisältää kaksi luokkaa GameController ja GameElements. Elements sisältää tavittavat JavaFx objektit ja controller on vastuussa niihin liittyvästä logiikasta ja pelin pyörittämisestä.
 
-Ui.game pakkaus keskustelee ui ulkopuolisen game pakkauksen kanssa ja yhdessä ne luovat pelin. Ui.game 'juteelee' peli luokan kanssa 
+Ui.game pakkaus keskustelee ui ulkopuolisen game pakkauksen kanssa ja yhdessä ne luovat pelin. Ui.game 'juttelee' peli luokan kanssa 
 game pakkauksen Pong luokan kautta.
 
 ![ui.gameDependecy](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/UiGameDependency.png)
@@ -26,7 +26,7 @@ game pakkauksen Pong luokan kautta.
 
 ## game
 
-Game luokassa on kahdeksan luokkaa, neljä luokista eii sisällä logiikkaa, joten en käsittele niitä. Peliä käydään pong luokan kautta.
+Game luokassa on kahdeksan luokkaa, neljä luokista ei sisällä logiikkaa, joten en käsittele niitä. Peliä käydään pong luokan kautta.
 Pong:iin liittyy user luokka, AI luokka ja Ball luokka.
 
 ![game luokkakaavio](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/GameLuokkakaavio.png)
