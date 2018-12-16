@@ -12,24 +12,23 @@ java -jar FakePong_v1-1.jar
 
 ![Aloitus valikko](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/Starting%20menu.png)
 
-Aloitus valikossa liikutaan ylös - ja alas nuolinäppäimillä. Kun teksti muuttuu valkoiseksi, se tarkoittaa, että tekstin kuvaava toiminto on
+Aloitus valikossa liikutaan ylös ja alas nuolinäppäimillä. Kun teksti muuttuu valkoiseksi, se tarkoittaa, että tekstin kuvaava toiminto on
 suoritettavissa painamalla enter näppäintä.
 
 ## One player 
 
-One player pelimuodossa on nimensä yksin pelattava pelimuoto, jossa käyttäjä pelaa AI:ta vastaan.  Käyttäjä ohjaa vasemman puoleista 
-mailaa näppäimillä w ja s. 
+One player pelimuodossa on nimensä mukaisesti yksin pelattava pelimuoto, jossa käyttäjä pelaa AI:ta vastaan.  Käyttäjä ohjaa vasemman puoleista mailaa näppäimillä w ja s. 
 
 ## Two player
 
-Two player pelimuodossa on käyttäjiä kaksi. Vasemman puoileista mailaa ohjataan edelleen w ja s näppäimillä,
-mutta tällä kertaa oikea maila on ohjatavissa ylös - ja alas nuolinäppäimillä.
+Two player pelimuodossa on käyttäjiä kaksi. Vasemman puoleista mailaa ohjataan edelleen w ja s näppäimillä,
+mutta tällä kertaa oikea maila on ohjatavissa ylös ja alas nuolinäppäimillä.
 
 ## Nopeuden valinta
 
 ![Nopeuden valinta](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/Speeds.png)
 
-One player ja two player pelimuodossa ennen peliä pitää valita pallon nopeus. Painamalla aloitus meussa kyseisiä nappeja vie nopeuden 
+One player ja two player pelimuodossa ennen peliä pitää valita pallon nopeus. Painamalla aloitus menussa kyseisiä nappeja vie nopeuden 
 valinta valikkoon. One player:issä AI:n logiikka ei ole tällä hetkellä riippuvainen pallon nopeudesta, täten hiukan epäintuitiivisesti
 hitain asetus on vaikein tällä hetkellä.
 
