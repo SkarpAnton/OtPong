@@ -18,14 +18,14 @@ mailaa
 * jonkinlainen järkevä liike pallolle
 * aloituksessa pallo lähtee keskiviivasta maalin tehneen pelaajan maalia kohti
 * mailat liikkuu vertikaalisesti pelaajien käskyistä
-* pallo kimpoaa mailoista (saatan tehdä pallon kimpouksen hiukan eri tavalla kuin alkuperäisessä pelissä)
+* pallo kimpoaa mailoista (suunta osuma kohdasta)
 * peli yhteentoista
 
 [video 1972 Atari Pong:ista](https://www.youtube.com/watch?v=e4VRgY3tkh0)
 
 #### Edistyneempi tominnalisuus
 
-Projektiin on lisätty myös hiukan toiminnalisuutta, jotka eivät ole vältttämättömioä toiminnalle, mutta mitka ovat hyviä lisöjä.
+Projektiin on lisätty myös hiukan toiminnalisuutta, jotka eivät ole vältttämättömioä toiminnalle, mutta mitkä ovat hyviä lisiä.
 
 * käyttäjien lisäys ranked pelimuotoon
 * pallon nopeuden valinta
