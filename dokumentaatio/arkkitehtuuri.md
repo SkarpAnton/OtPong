@@ -53,7 +53,18 @@ Tilanteissa, jossa käytetään tietokantahakuun käyttäjien nimiä tehdään p
 
 #### Käy läpi pongin luomisen ja yhden kierroksen kahden pelaajan peliä
 
-![Pong move](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/SekvenssiKaavioPongMove.png)
+![Pong kaksi pelaajaa](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/SekvenssiKaavioTwoPlayer.png)
 
+#### Vastaava yhden pelaajan pelimuodossa
+
+![Pong yksi pelaajaa](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/SekvenssiKaavioAI.png)
+
+#### Maalien päivitys
+
+![Maalien päivitys](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/SekvenssiKaavioScoring.png)
+
+#### Elo-ratingin päivitys
+
+![Ratingin päivitys](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/SekvenssiKaavioRatingUpdate.png)
 
 
