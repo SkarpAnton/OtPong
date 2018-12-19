@@ -53,7 +53,7 @@ Tilanteissa, jossa käytetään tietokantahakuun käyttäjien nimiä tehdään p
 
 #### Käy läpi pongin luomisen ja yhden kierroksen kahden pelaajan peliä
 
-!Pong move](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/SekvenssiKaavioPongMove.png)
+![Pong move](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/SekvenssiKaavioPongMove.png)
 
 
 
