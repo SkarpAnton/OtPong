@@ -25,7 +25,7 @@ mailaa
 
 #### Edistyneempi tominnalisuus
 
-Projektiin on lisätty myös hiukan toiminnalisuutta, jotka eivät ole vältttämättömioä toiminnalle, mutta mitkä ovat hyviä lisiä.
+Projektissa on myös hiukan toiminnalisuutta, jotka eivät ole vältttämättömiä toiminnalle, mutta mitkä ovat hyviä lisiä peliin.
 
 * käyttäjien lisäys ranked pelimuotoon
 * pallon nopeuden valinta
