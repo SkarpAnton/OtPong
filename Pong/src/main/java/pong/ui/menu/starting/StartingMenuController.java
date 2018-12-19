@@ -37,10 +37,6 @@ public class StartingMenuController extends MenuController {
                 System.exit(0);
         }
     }
-    
-    private void runController(MenuController menuController) {
-        menuController.run(stage);
-    }
 
     @Override
     protected void addAndModifyChildren(Pane root) {

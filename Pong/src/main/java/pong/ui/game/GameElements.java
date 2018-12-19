@@ -11,6 +11,9 @@ import pong.game.Ball;
 import pong.game.Field;
 import pong.game.Paddle;
 
+/**
+ * Contains the Javafx elements needed for the game
+ */
 public class GameElements {
 
     private Rectangle paddleP1;
@@ -20,6 +23,10 @@ public class GameElements {
     private Text p2ScoreText;
     private Line centerLine;
 
+    /**
+     * Initializes all the elements and adds them to the pane
+     * @return root for the game
+     */
     public Pane createGameRoot() {
         initializeElements();
         return createPane();

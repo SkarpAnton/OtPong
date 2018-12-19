@@ -1,18 +1,31 @@
-package pong.database;
+package pong.rating.database;
 
 import java.util.List;
-import pong.database.sqlstatements.GetRatingStatement;
-import pong.database.sqlstatements.GetTopTenStatement;
-import pong.database.sqlstatements.UpdateRatingStatement;
+import pong.rating.PlayerAndRating;
+import pong.rating.RatingDao;
+import pong.rating.database.GetRatingStatement;
+import pong.rating.database.GetTopTenStatement;
+import pong.rating.database.UpdateRatingStatement;
 
+/**
+ * Database implementation of the RatingDao
+ */
 public class DatabaseRatingDao implements RatingDao {
 
     private String url;
 
+    /**
+     * 
+     * @param url path to the database
+     */
     public DatabaseRatingDao(String url) {
         this.url = url;
     }
 
+    /**
+     * Gets top ten players by rating
+     * @return List of ten PlayeRating object which are sorted by rating  
+     */
     @Override
     public List<PlayerAndRating> getTopTen() {
         GetTopTenStatement statement = new GetTopTenStatement(url);
@@ -20,6 +33,11 @@ public class DatabaseRatingDao implements RatingDao {
         return statement.getRatings();
     }
 
+    /**
+     * Updates a given players rating
+     * @param name name of the player whose rating is being updated
+     * @param rating rating that replaces old rating
+     */
     @Override
     public void updateRating(String name, int rating) {
         UpdateRatingStatement statement = new UpdateRatingStatement(url);
@@ -28,7 +46,11 @@ public class DatabaseRatingDao implements RatingDao {
         statement.executeAndHandle();
     }
     
-
+    /**
+     * Gets rating of a player
+     * @param name name of the player whose rating is being retrieved
+     * @return rating of the player
+     */
     @Override
     public int getRating(String name) {
         GetRatingStatement statement = new GetRatingStatement(url);

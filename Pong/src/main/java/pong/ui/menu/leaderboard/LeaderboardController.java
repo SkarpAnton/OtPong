@@ -24,8 +24,6 @@ public class LeaderboardController extends MenuController {
 
     @Override
     protected void activate() {
-        StartingMenuController startingMenuController
-                = new StartingMenuController(new StartingMenuElements());
-        startingMenuController.run(stage);
+        runController(new StartingMenuController(new StartingMenuElements()));
     }
 }

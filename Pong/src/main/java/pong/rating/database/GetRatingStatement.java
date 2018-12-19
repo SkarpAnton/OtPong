@@ -1,12 +1,18 @@
 
-package pong.database.sqlstatements;
+package pong.rating.database;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ *
+ * Implements the SQlStatements. Class is responsible of getting the rating of
+ * a given player by name.
+ */
 public class GetRatingStatement extends SqlStatement {
 
+    
     public GetRatingStatement(String url) {
         super(url);
     }

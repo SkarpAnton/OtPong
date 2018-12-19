@@ -18,10 +18,6 @@ public class Ball {
     private double x;
     private double y;
     
-    /**
-     * Constructor for the class Ball
-     * @param ballSpeed how much ball moves every time move is called
-     */
     public Ball(int ballSpeed) {
         this.ballSpeed = ballSpeed;
         newStart();

@@ -8,12 +8,15 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import pong.game.Field;
 import pong.game.Pong;
-import pong.database.RatingHandler;
+import pong.rating.RatingHandler;
 import pong.ui.menu.endgame.GameEndController;
 import pong.ui.menu.endgame.GameEndElements;
-import pong.ui.menu.starting.StartingMenuController;
-import pong.ui.menu.starting.StartingMenuElements;
+import pong.ui.menu.pause.PauseController;
+import pong.ui.menu.pause.PauseElements;
 
+/**
+ * 
+ */
 public class GameController {
 
     private final Pong pong;
@@ -23,6 +26,9 @@ public class GameController {
     private final Stage stage;
     private AnimationTimer timer;
 
+    /**
+     * initializes elements and object needed for the game
+     */
     public GameController(Boolean twoPlayerGame, int ballSpeed, RatingHandler ranked, Stage stage) {
         this.stage = stage;
         pong = new Pong(ballSpeed, twoPlayerGame, ranked);
@@ -31,7 +37,7 @@ public class GameController {
         scene = new Scene(root, Field.getWIDTH(), Field.getHEIGHT());
         scene.getStylesheets().add("css/pane_style.css");
         setKeyEventsToScene();
-        startTimer();
+        createTimer();
     }
 
     public Scene getScene() {
@@ -54,14 +60,12 @@ public class GameController {
     
     private void openMenu(KeyCode key) {
         if (KeyCode.ESCAPE == key) {
-            timer.stop();
-            StartingMenuController startingMenuController
-                    = new StartingMenuController(new StartingMenuElements());
-            startingMenuController.run(stage);
+            PauseController pauseController = new PauseController(new PauseElements(), this);
+            pauseController.run(stage);
         }
     }
     
-    private void startTimer() {
+    private void createTimer() {
         timer = new AnimationTimer() {
             @Override
             public void handle(long currentNanoTime) {
@@ -72,23 +76,32 @@ public class GameController {
                 }
             }
         };
+    }
+    
+    /**
+     * starts the game
+     */
+    public void start() {
         timer.start();
+    }
+    
+    /**
+     * stops the game
+     */
+    public void stop() {
+        timer.stop();
     }
 
     private void gameEnd() {
-        timer.stop();
+        stop();
         pong.updateRating();
-        try {
-            if (pong.isPlayerOneWinner()) {
-                runEndGameScreen("Player one");
-            } else {
-                runEndGameScreen("Player two");
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        if (pong.isPlayerOneWinner()) {
+            runEndGameScreen("Player one");
+        } else {
+            runEndGameScreen("Player two");
         }
     }
-  
+
     private void runEndGameScreen(String winner) {
         GameEndController gameEndController = new GameEndController(
                 new GameEndElements(pong.getPlayerOneScore(),

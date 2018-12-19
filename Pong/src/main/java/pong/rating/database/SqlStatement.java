@@ -1,4 +1,4 @@
-package pong.database.sqlstatements;
+package pong.rating.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,9 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import pong.database.DatabaseRatingDao;
-import pong.database.PlayerAndRating;
+import pong.rating.PlayerAndRating;
 
+/**
+ *
+ * @author skarp
+ */
 public abstract class SqlStatement {
 
     protected Connection connection;
@@ -18,24 +21,34 @@ public abstract class SqlStatement {
     protected int rating = -1;
     protected List<PlayerAndRating> ratings = new ArrayList<>();
 
+    /**
+     * Abstract method that is intended to run some SQL statement.
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     protected abstract void execute()
             throws SQLException, ClassNotFoundException;
+
 
     public SqlStatement(String url) {
         this.url = url;
     }
 
+
     public String getName() {
         return name;
     }
+
 
     public void setName(String name) {
         this.name = name;
     }
 
+
     public int getRating() {
         return rating;
     }
+
 
     public void setRating(int rating) {
         this.rating = rating;
@@ -45,22 +58,31 @@ public abstract class SqlStatement {
         return ratings;
     }
 
+    /**
+     * Creates a connection to a database
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     protected void connect() throws SQLException, ClassNotFoundException {
         Class.forName("org.sqlite.JDBC");
         connection = null;
         connection = DriverManager.getConnection(url);
     }
 
+    /**
+     * Runs the abstract execute method.
+     * Handles the exceptions caused by running SQL statements.
+     */
     public void executeAndHandle() {
         try {
             execute();
         } catch (SQLException | ClassNotFoundException ex) {
-            ex.printStackTrace();
+            Logger.getLogger(DatabaseRatingDao.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 connection.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DatabaseRatingDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DatabaseRatingDao.class.getName()).log(Level.WARNING, null, ex);
             }
         }
     }

@@ -1,8 +1,11 @@
 package pong.game;
 
-import pong.database.RatingHandler;
+import pong.rating.RatingHandler;
 import javafx.scene.input.KeyCode;
 
+/**
+ * Contains objects related to the game and some logic
+ */
 public class Pong {
 
     private int playerOneScore = 0;
@@ -20,7 +23,7 @@ public class Pong {
     public Pong(int ballSpeed, boolean twoPlayers, RatingHandler ratingHandler) {
         this.twoPlayerGame = twoPlayers;
         ball = new Ball(ballSpeed);
-        ai = new AI(ball);
+        ai = new AI(ball, ballSpeed);
         this.ratingHandler = ratingHandler;
     }
 
@@ -48,6 +51,9 @@ public class Pong {
         return twoPlayerGame;
     }
 
+    /**
+     * Calls the game objects to move
+     */
     public void move() {
         if (twoPlayerGame) {
             ball.move(playerOne.getUpdatedHeight(), playerTwo.getUpdatedHeight());
@@ -58,12 +64,17 @@ public class Pong {
 
     }
     
+  
     public void updateRating() {
         if (ratingHandler != null) {
             ratingHandler.updateRatings(isPlayerOneWinner());
         }
     }
 
+    /**
+     * If ball crossed left - or right side increases the opposite players score
+     * and starts the countdown for the game to continue after goal
+     */
     public void scored() {
         if (ball.getX() <= 0) {
             playerTwoScore = scoreGoal(playerTwoScore);
@@ -94,14 +105,26 @@ public class Pong {
         return false;
     }
 
+    /**
+     * checks if player one won
+     * @return true if player one has 11 or more goals otherwise false
+     */
     public boolean isPlayerOneWinner() {
         return playerOneScore >= gamePlayedTo;
     }
 
+    /**
+     * checks if player two won
+     * @return true if player two has 11 or more goals otherwise false
+     */
     public boolean isPlayerTwoWinner() {
         return playerTwoScore >= gamePlayedTo;
     }
 
+    /**
+     * Checks if game ended
+     * @return true if one side has scored 11 or more goals otherwise return false.
+     */
     public boolean hasGameEnded() {
         return isPlayerOneWinner() || isPlayerTwoWinner();
     }

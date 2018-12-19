@@ -1,4 +1,4 @@
-package tests;
+package tests.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,17 +12,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import pong.database.DatabaseRatingDao;
-import pong.database.PlayerAndRating;
-import pong.database.RatingDao;
+import pong.rating.database.DatabaseRatingDao;
+import pong.rating.PlayerAndRating;
+import pong.rating.RatingDao;
 
-public class DatabaseTest {
+public class DatabaseRatingDaoTest {
 
-    private static String url = "jdbc:sqlite:databases/test.db";
+    private static final String URL = "jdbc:sqlite:databases/test.db";
     private static Connection connection;
-    private RatingDao dao = new DatabaseRatingDao(url);
+    private final RatingDao dao = new DatabaseRatingDao(URL);
 
-    public DatabaseTest() {
+    public DatabaseRatingDaoTest() {
     }
 
     @BeforeClass
@@ -30,9 +30,9 @@ public class DatabaseTest {
         try {
             Class.forName("org.sqlite.JDBC");
             connection = null;
-            connection = DriverManager.getConnection(url);
+            connection = DriverManager.getConnection(URL);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(DatabaseTest.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DatabaseRatingDaoTest.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -47,7 +47,6 @@ public class DatabaseTest {
             insert = "INSERT INTO ratings(name, rating) VALUES('TestName2', 20)";
             statement.executeUpdate(insert);
         } catch (SQLException ex) {
-            ex.printStackTrace();
         }
 
     }

@@ -1,4 +1,4 @@
-package tests;
+package tests.game;
 
 
 import org.junit.Before;

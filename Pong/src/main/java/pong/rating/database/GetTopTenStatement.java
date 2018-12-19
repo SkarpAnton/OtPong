@@ -1,10 +1,14 @@
-package pong.database.sqlstatements;
+package pong.rating.database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import pong.database.PlayerAndRating;
+import pong.rating.PlayerAndRating;
 
+/**
+ * Implements the SQlStatements. Class is responsible of getting the top rated 
+ * players names and their ratings
+ */
 public class GetTopTenStatement extends SqlStatement {
 
     public GetTopTenStatement(String url) {
@@ -18,7 +22,6 @@ public class GetTopTenStatement extends SqlStatement {
         String query = "SELECT * FROM ratings ORDER BY rating DESC LIMIT 10 ";
         ResultSet results = statement.executeQuery(query);
         while (results.next()) {
-            System.out.println(results.getInt("rating"));
             ratings.add(new PlayerAndRating(results.getString("name"), results.getInt("rating")));
         }
     }

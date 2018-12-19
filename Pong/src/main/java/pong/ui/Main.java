@@ -5,6 +5,9 @@ import javafx.stage.Stage;
 import pong.ui.menu.starting.StartingMenuElements;
 import pong.ui.menu.starting.StartingMenuController;
 
+/**
+ * Main class of the program
+ */
 public class Main extends Application {
 
     @Override
@@ -15,6 +18,10 @@ public class Main extends Application {
         startingMenuController.run(stage);
     }
 
+    /**
+     * the main function of the program
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }

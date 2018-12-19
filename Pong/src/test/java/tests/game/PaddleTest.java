@@ -1,4 +1,4 @@
-package tests;
+package tests.game;
 
 
 import javafx.scene.input.KeyCode;

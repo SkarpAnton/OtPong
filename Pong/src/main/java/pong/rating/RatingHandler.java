@@ -1,17 +1,32 @@
-package pong.database;
+package pong.rating;
 
+import pong.rating.database.DatabaseRatingDao;
+
+/**
+ * Calculates the ELO ratings for the players and updates them through RatingDao
+ */
 public class RatingHandler {
 
-    private final String url = "jdbc:sqlite:databases/ratings.db";
-    private final RatingDao dao = new DatabaseRatingDao(url);
     private final String playerOneName;
     private final String playerTwoName;
-
-    public RatingHandler(String playerOneName, String playerTwoName) {
+    private final RatingDao dao;
+    
+    /**
+     *
+     * @param playerOneName Name of the player one
+     * @param playerTwoName Name of the player two
+     * @param url path to the database
+     */
+    public RatingHandler(String playerOneName, String playerTwoName, String url) {
         this.playerOneName = playerOneName;
         this.playerTwoName = playerTwoName;
+        dao = new DatabaseRatingDao(url);
     }
 
+    /**
+     * Calculates the ELO ratings for the players and updates them through RatingDao
+     * @param p1Won
+     */
     public void updateRatings(Boolean p1Won) {
         int playerOneRating = dao.getRating(playerOneName);
         int playerTwoRating = dao.getRating(playerTwoName);
@@ -43,9 +58,5 @@ public class RatingHandler {
 
     private double transformRating(double rating) {
         return Math.pow(10, rating / 400);
-    }
-
-    public RatingDao getDao() {
-        return dao;
     }
 }

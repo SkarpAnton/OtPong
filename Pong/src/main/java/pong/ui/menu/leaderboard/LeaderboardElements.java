@@ -6,9 +6,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import pong.database.DatabaseRatingDao;
-import pong.database.PlayerAndRating;
-import pong.database.RatingDao;
+import pong.rating.database.DatabaseRatingDao;
+import pong.rating.PlayerAndRating;
+import pong.rating.RatingDao;
 
 import pong.ui.menu.MenuElements;
 

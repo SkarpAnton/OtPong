@@ -35,6 +35,7 @@ public class DifficultyController extends MenuController {
     private void transitionToGame(int speed) {
         GameController gameController = new GameController(twoPlayergame, speed, null, stage);
         stage.setScene(gameController.getScene());
+        gameController.start();
     }
 
     @Override
