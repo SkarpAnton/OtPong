@@ -6,14 +6,16 @@ Tämä on Helsingin yliopiston ohjelmistotekniikan harjoitusprojekti, joka on t�
 hetkellä työn alla.
 
 ## Dokumentaatio
+
+[Käyttöohje](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/kayttoohje.md)
+
 [Vaativuusmäärittely](https://github.com/SkarpAnton/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
 [Työaikakirjanpito](https://github.com/SkarpAnton/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 [Arkkitehtuuri](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-[Käyttöohje](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/kayttoohje.md)
-
+[Testaus](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/testaus.md)
 
 ## Komentorivikomennot
 
