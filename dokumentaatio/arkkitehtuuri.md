@@ -21,7 +21,7 @@ Menu luokka keskustelee pong.ui.game - ja pong.database pakkauksen kanssa. Pakka
 Ui.game pakkaus on vastuussa pelin näyttämisestä ja sen ajamisesta. Game pakkaus sisältää kaksi luokkaa GameController ja GameElements. Elements sisältää tavittavat JavaFx objektit ja controller on vastuussa niihin liittyvästä logiikasta ja pelin pyörittämisestä.
 
 Ui.game pakkaus keskustelee ui ulkopuolisen game pakkauksen kanssa ja yhdessä ne luovat pelin. Ui.game 'juttelee' peli luokan kanssa 
-game pakkauksen Pong luokan kautta. Täten ui ja logiikka ei ole täysin eristettyjä sillä GameControllerin animation timer yhdessä oikeiden kutsujen kanssa päivittävät peliä, toisin sanoen pelissä ei tapahtuisi mitään ilman GamControlleria.l
+game pakkauksen Pong luokan kautta. Täten ui ja logiikka ei ole täysin eristettyjä sillä GameControllerin animation timer yhdessä oikeiden kutsujen kanssa päivittävät peliä, toisin sanoen pelissä ei tapahtuisi mitään ilman GamControlleria.
 
 ![ui.game suhden Game.pong kanssa](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/UiGameGamePong.png)
 
@@ -33,7 +33,7 @@ Pong:iin liittyy user luokka, AI luokka ja Ball luokka.
 
 ![game luokkakaavio](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/GameLuokkakaavio.png)
 
-Pong luokkaan lisäksi liitty database luokkaan. Pong lähettää ranked pelin lopuksi tiedon voittajaista ja pelaajien nimistä.
+Pong luokkaan lisäksi liitty database luokkaan. Pong lähettää ranked pelin lopuksi tiedon voittajasta.
 
 ![Pong rating](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/RatingPong.png)
 
@@ -42,7 +42,7 @@ Pong luokkaan lisäksi liitty database luokkaan. Pong lähettää ranked pelin l
 Rating pakkaus laskee Elo ratingin vanhan ratingin ja pelin lopputuloksen perusteella ja tallentaa sen. Tiedon hakuun ja tallennukseen käytetään RatingDao toteuttavan luokan oliota. 
 
 RatingDao:n toteutukseni käyttää tietokantaa, jossa on vain kolme saraketta: pääavain, pelaajan nimi ja rating.
-Tilanteissa, jossa käytetään tietokantahakuun käyttäjien nimiä tehdään preparedstatement:in avulla SQL-injektion välttämiseksi. 
+Tilanteissa, jossa käytetään tietokantahakuun käyttäjien nimiä, tehdään haku preparedstatement:in avulla SQL-injektion välttämiseksi. 
 
 ![Tietokanta](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/database.png)
 
