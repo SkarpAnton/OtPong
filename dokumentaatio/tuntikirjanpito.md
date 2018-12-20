@@ -15,5 +15,8 @@
 |9.12.|5 h|leaderboardin teko ja datbasen lisäys|
 |10.12|1 h|refaktorointia|
 |11.12|2 h|dokumenttien tekoa|
-|yht|22h 40min|||
+|19.12|2 h|arkkitehtuuri dokumentin muokkausta|
+|19.12|10 min|määrittelydokumentin muokkaus|
+|20.12|1 h|testausdokumentin muodostus|
+|yht|25h 50min|||
 
