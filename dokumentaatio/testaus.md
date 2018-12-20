@@ -32,7 +32,7 @@ Jos käyttöliittymää ei huomioi niin testikattavuus on hyvä. Rivikattavuus o
 
 ### Puutteet
 
-Rating pakkauksen ja game pakkauksen integraatio testejä ei ole olemassa. Pakkaukset ovat tosin melko eritettyjä toisistaan, joten ongelma ei ole kovin suuri,
+Rating pakkauksen ja game pakkauksen integraatio testejä ei ole olemassa. Pakkaukset ovat tosin melko eristettyjä toisistaan, joten ongelma ei ole kovin suuri,
 
 ## Järjestelmätestaus
 
@@ -62,8 +62,9 @@ Spovelluksen pitäisi testaukseni mukaan toimia määrittelydokumentin mukaisest
 
 Tietokannallani ei elo varmuuskopiota, joten jos jotain hassua tapahtuisi kirjoitus vaiheessa voisi käyttäjän tieto kadota lopullisesti.
 
+## Lähteet
 
-
+Esimerkki proktista otettu vahvasti mallia, toivottavasti ei lasketa ihan plagionniksi.
 
 
 
