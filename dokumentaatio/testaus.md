@@ -64,7 +64,7 @@ Tietokannallani ei elo varmuuskopiota, joten jos jotain hassua tapahtuisi kirjoi
 
 ## Lähteet
 
-Esimerkki proktista otettu vahvasti mallia, toivottavasti ei lasketa ihan plagionniksi.
+Esimerkki proktista otettu vahvasti mallia, toivottavasti ei lasketa plagionniksi.
 
 
 
