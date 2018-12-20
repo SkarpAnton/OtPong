@@ -23,14 +23,13 @@ mailaa
 
 [video 1972 Atari Pong:ista](https://www.youtube.com/watch?v=e4VRgY3tkh0)
 
-#### Edistyneempi tominnalisuus
+#### Edistyneempi tominnallisuus
 
 Projektissa on myös hiukan toiminnalisuutta, jotka eivät ole vältttämättömiä toiminnalle, mutta mitkä ovat hyviä lisiä peliin.
 
-* käyttäjien lisäys ranked pelimuotoon
+* ranked pelimuoto
 * pallon nopeuden valinta
-* leaderboard:in lisääminen
-* yhden pelaajan moodi, tekoäly vastustaja
+* yhden pelaajan pelimuoto, tekoäly vastustaja
 
  
 
