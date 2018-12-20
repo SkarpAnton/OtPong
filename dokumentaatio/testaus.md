@@ -14,15 +14,15 @@ Ball luokka sisältää satunnaislukuja, joten luokkaa on hankala testata luotet
 useita kertoja, yleensä 10000 kertaa, jotta testeistä tulisi luotettavia. AI ja Pong luokkien tominnalisuus on riippuvainen Ball luokasta 
 ja täten satunnaisuus ilmenee niissäkin ja testeissä käytetään täten samaa periaatetta eli testejä toistetaan useita kertoja.
 
-Testi luokat myös tietenkin silsältävät yksikkötestejä. Yksikkötesteillä testataan esimerkiksi, että pallot ja mailat pysyvät kentän sisällä.
+Testi luokat myös tietenkin sisältävät yksikkötestejä. Yksikkötesteillä testataan esimerkiksi, että pallot ja mailat pysyvät kentän sisällä.
 
 #### rating
 
-pong.rating testaa tests.rating pakkaus. Ratinghandler luokan logiikka on riippuvainen ratingdao:sta, joten luokka testaa hiukan sitäkin toteutusta. Dao testit käyttää omaa test.db tietokantaa, joka alustetaan, joka testiä ennen. 
+pong.rating testaa tests.rating pakkaus. Ratinghandler luokan logiikka on riippuvainen ratingdao:sta, joten luokka testaa hiukan sitäkin toteutusta. Dao testit käyttää omaa test.db tietokantaa, joka alustetaan jokaista testiä ennen. 
 
 ### ui
 
-En testannut automaattisesti käyttöliittymää, vaikka olisi sellainenkin ollut varmaankin hyvä toteuttaa.
+En testannut automaattisesti käyttöliittymää, vaikka olisi sellainenkin ollut varmaan hyvä toteuttaa.
 
 ### Testikattavuus
 
