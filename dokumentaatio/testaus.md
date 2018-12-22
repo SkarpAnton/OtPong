@@ -26,13 +26,15 @@ En testannut automaattisesti käyttöliittymää, vaikka olisi sellainenkin ollu
 
 ### Testikattavuus
 
-Jos käyttöliittymää ei huomioi niin testikattavuus on hyvä. Rivikattavuus on 97% ja haaraumakattavuus on 100%.
+Jos käyttöliittymää ei huomioi niin testikattavuus on kohtuullinen. Rivikattavuus on 93% ja haaraumakattavuus on 90%.
 
 ![Testikattavuus](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/Testikattavuus.png)
 
 ### Puutteet
 
-Rating pakkauksen ja game pakkauksen integraatio testejä ei ole olemassa. Pakkaukset ovat tosin melko eristettyjä toisistaan, joten ongelma ei ole kovin suuri,
+Rating pakkauksen ja game pakkauksen integraatio testejä ei ole olemassa. Pakkaukset ovat tosin melko eristettyjä toisistaan, joten ongelma ei ole kovin suuri.
+
+![Pong luokka testikattavuus](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/PongKattavuus.png)
 
 ## Järjestelmätestaus
 
@@ -56,15 +58,13 @@ Sovellus ei sisällä oikeastaan konfigurointia, jar:in pitäisi sisältää kai
 
 ### Toiminnalisuudet
 
-Spovelluksen pitäisi testaukseni mukaan toimia määrittelydokumentin mukaisesti. Käyttäjän syötteisiin on varauduttu sovelluksessa ja olen testannut sitä manuaaliesti.
+Sovelluksen pitäisi testaukseni mukaan toimia määrittelydokumentin mukaisesti. Käyttäjän syötteisiin on varauduttu sovelluksessa ja olen testannut sitä manuaaliesti.
 
 ## Laatuongelmat
 
-Tietokannallani ei elo varmuuskopiota, joten jos jotain hassua tapahtuisi kirjoitus vaiheessa voisi käyttäjän tieto kadota lopullisesti.
+Tietokannallani ei ole varmuuskopiota, joten jos jotain hassua tapahtuisi kirjoitus vaiheessa voisi käyttäjän tieto kadota lopullisesti.
 
-## Lähteet
 
-Esimerkki proktista otettu vahvasti mallia, toivottavasti ei lasketa plagionniksi.
 
 
 
