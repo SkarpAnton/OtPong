@@ -18,7 +18,13 @@ Tämä on Helsingin yliopiston ohjelmistotekniikan harjoitusprojekti.
 
 ## Komentorivikomennot
 
+### Alustus
+
+komennot olettavat, että olet maven projektin juuressa
+
 ### Testaus
+
+Testit voi ajaa komennolla,
 
 ```
 mvn test
@@ -26,26 +32,37 @@ mvn test
 
 ### Testikattavuus
 
+Testikattavuusraportin voi luoda komennolla, 
 ```
 mvn jacoco:report
 ```
+Raportti löytyy /target/site/jacoco/index.html
 
 ### Jarin generointi
+
+Komento
 
 ```
 mvn package
 ```
-
+luo target kansioon suoritettavan tiedoston  Pong-1.0-SNAPSHOT-shaded.jar
 
 ### Checkstyle
+
+Luo checkstyle raportin.
 
 ```
  mvn jxr:jxr checkstyle:checkstyle
 ```
+Raportti löytyy /target/site/checkstyle.html
 
 ### JavaDoc
+
+Luo javadocin
 
 ```
 mvn javadoc:javadoc
 ```
+
+javadoc löytyy /target/site/apidocs/index.html
 
