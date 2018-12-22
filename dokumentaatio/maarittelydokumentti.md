@@ -2,9 +2,9 @@
 
 ### Projektin tarkoitus
 
-Projektina on lokaali versio Pong-pelistä
+Projektina on lokaali versio Pong-pelistä. 
 
-### Projektin toiminnalisuus
+### Projektin vaatimukset
 
 #### Perustoiminnallisuus
 
@@ -30,6 +30,13 @@ Projektissa on myös hiukan toiminnalisuutta, jotka eivät ole vältttämättöm
 * ranked pelimuoto
 * pallon nopeuden valinta
 * yhden pelaajan pelimuoto, tekoäly vastustaja
+
+### Jatkokehitysideoita
+
+* kerättäisiin enemmän tietoa käyttäjästä
+* nettisivu leaderboardille ja tilastoille
+* enemmän asetuksia (ylös alas näppäimet vaihtoehtoja, erilaisia pallon kimpoiluja mailasta jne.)
+
 
  
 
