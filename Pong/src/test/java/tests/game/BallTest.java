@@ -1,8 +1,6 @@
 package tests.game;
 
-
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import pong.game.Ball;
@@ -19,6 +17,15 @@ public class BallTest {
     @Before
     public void setUp() {
         ball = new Ball(8);
+    }
+
+    @Test
+    public void yDoesNotGoOverBorder() {
+        for (int i = 0; i < 10000; i++) {
+            ball.move(0, 0);
+            assertTrue(ball.getY() >= 0);
+            assertTrue(ball.getY() <= Field.getHEIGHT());
+        }
     }
 
     @Test
@@ -48,8 +55,6 @@ public class BallTest {
         }
         assertTrue(!yIsConstant);
     }
-    
-    
 
     @Test
     public void startsInRandomDirection() {
@@ -74,7 +79,7 @@ public class BallTest {
 
     @Test
     public void hitsUpperPartOfPaddle() {
-        
+
         boolean hit = false;
         int xBefore = ball.getX();
         ball.move(Field.getHEIGHT() / 2, Field.getHEIGHT() / 2);
@@ -94,7 +99,7 @@ public class BallTest {
 
         assertTrue(hit);
     }
-    
+
     @Test
     public void hitsUpperPartOfPaddleChangesDirection() {
 
@@ -143,10 +148,10 @@ public class BallTest {
         int yAfter = ball.getY();
         assertTrue(yAfter > yBefore);
     }
-    
+
     @Test
     public void hitsLowerPartOfPaddle() {
-        
+
         boolean hit = false;
         int xBefore = ball.getX();
         ball.move(Field.getHEIGHT() / 2, Field.getHEIGHT() / 2);

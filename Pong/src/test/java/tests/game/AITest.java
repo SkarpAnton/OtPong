@@ -1,4 +1,3 @@
-
 package tests.game;
 
 import org.junit.Before;
@@ -12,17 +11,17 @@ import pong.game.Paddle;
 import pong.game.Speeds;
 
 public class AITest {
-    
+
     private Ball ball;
     private AI ai;
-    
+
     public AITest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @Before
     public void setUp() {
         ball = new Ball(Speeds.getNormal());
@@ -30,16 +29,36 @@ public class AITest {
     }
 
     @Test
-    public void AIFollowsBallTest() {
-        for (int i = 0; i < 1000; i ++) {
-            ball.move(-1, -1);
-            int currentYDiff = Math.abs(ball.getY() - ai.getY());
+    public void AIDoesNotGoOverBorder() {
+        int buffer = 5;
+        for (int i = 0; i < 10000; i++) {
             ai.move();
-            int newYDiff = Math.abs(ball.getY() - ai.getY());
-            if (ball.getY() > Paddle.getHEIGHT() / 2 
-                    && ball.getY() < Field.getHEIGHT() - Paddle.getHEIGHT() / 2) {
+            ball.move(-1, -1);
+            assertTrue(ai.getY() <= Field.getHEIGHT() - Paddle.getHEIGHT() + buffer);
+            assertTrue(ai.getY() >= -buffer);
+        }
+    }
+
+    @Test
+    public void AIFollowsBallTest() {
+        for (int i = 0; i < 1000; i++) {
+            ball.move(-1, -1);
+            int currentYDiff = difference();
+            ai.move();
+            int newYDiff = difference();
+            if (ball.getY() > Paddle.getHEIGHT() / 2
+                    && ball.getY() < Field.getHEIGHT() - Paddle.getHEIGHT() / 2) {                
                 assertTrue(newYDiff <= currentYDiff || currentYDiff <= 2);
             }
         }
+    }
+   
+    
+    private int difference() {
+        return Math.abs(ball.getY() - paddleMiddlePoint());
+    }
+    
+    private int paddleMiddlePoint() {
+        return ai.getY() + Paddle.getHEIGHT() / 2;
     }
 }

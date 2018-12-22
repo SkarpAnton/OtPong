@@ -9,7 +9,7 @@ public class RatingHandler {
 
     private final String playerOneName;
     private final String playerTwoName;
-    private final RatingDao dao;
+    private final RatingDao ratingDao;
     
     /**
      *
@@ -20,16 +20,16 @@ public class RatingHandler {
     public RatingHandler(String playerOneName, String playerTwoName, String url) {
         this.playerOneName = playerOneName;
         this.playerTwoName = playerTwoName;
-        dao = new DatabaseRatingDao(url);
+        ratingDao = new DatabaseRatingDao(url);
     }
 
     /**
      * Calculates the ELO ratings for the players and updates them through RatingDao
-     * @param p1Won
+     * @param p1Won true if player one won otherwise false
      */
     public void updateRatings(Boolean p1Won) {
-        int playerOneRating = dao.getRating(playerOneName);
-        int playerTwoRating = dao.getRating(playerTwoName);
+        int playerOneRating = ratingDao.getRating(playerOneName);
+        int playerTwoRating = ratingDao.getRating(playerTwoName);
         int updatedPlayerOneRating;
         int updatedPlayerTworating;
 
@@ -40,8 +40,8 @@ public class RatingHandler {
             updatedPlayerOneRating = calculateUpdatedRating(playerOneRating, playerTwoRating, 0);
             updatedPlayerTworating = calculateUpdatedRating(playerTwoRating, playerOneRating, 1);
         }
-        dao.updateRating(playerOneName, updatedPlayerOneRating);
-        dao.updateRating(playerTwoName, updatedPlayerTworating);
+        ratingDao.updateRating(playerOneName, updatedPlayerOneRating);
+        ratingDao.updateRating(playerTwoName, updatedPlayerTworating);
     }
 
     private int calculateUpdatedRating(int beingChanged, int opponent, double whoWon) {

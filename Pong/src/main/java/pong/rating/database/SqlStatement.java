@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import pong.rating.PlayerAndRating;
 
 /**
@@ -23,32 +21,28 @@ public abstract class SqlStatement {
 
     /**
      * Abstract method that is intended to run some SQL statement.
+     *
      * @throws SQLException
      * @throws ClassNotFoundException
      */
     protected abstract void execute()
             throws SQLException, ClassNotFoundException;
 
-
     public SqlStatement(String url) {
         this.url = url;
     }
-
 
     public String getName() {
         return name;
     }
 
-
     public void setName(String name) {
         this.name = name;
     }
 
-
     public int getRating() {
         return rating;
     }
-
 
     public void setRating(int rating) {
         this.rating = rating;
@@ -60,6 +54,7 @@ public abstract class SqlStatement {
 
     /**
      * Creates a connection to a database
+     *
      * @throws SQLException
      * @throws ClassNotFoundException
      */
@@ -70,24 +65,19 @@ public abstract class SqlStatement {
     }
 
     /**
-     * Runs the abstract execute method.
-     * Handles the exceptions caused by running SQL statements.
+     * Runs the abstract execute method. At the moment method does nothing with
+     * the exception
      */
     public void executeAndHandle() {
         try {
             execute();
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(DatabaseRatingDao.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 connection.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DatabaseRatingDao.class.getName()).log(Level.WARNING, null, ex);
             }
         }
     }
-    
 
-    
-    
 }

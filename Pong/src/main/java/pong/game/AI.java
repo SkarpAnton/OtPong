@@ -6,7 +6,7 @@ package pong.game;
  */
 public class AI {
 
-    private int height = Field.getHEIGHT() / 2;
+    private int y = Field.getHEIGHT() / 2;
     private final Ball ball;
     private final int ballSpeedMultiplier;
 
@@ -16,7 +16,7 @@ public class AI {
      */
     public AI(Ball ball, int ballSpeed) {
         this.ball = ball;
-        ballSpeedMultiplier = ballSpeed / 5 + 1;
+        ballSpeedMultiplier = ballSpeed / 6 + 1;
     }
 
     /**
@@ -27,22 +27,22 @@ public class AI {
      * to make AI possible to beat even with slower speeds.
      */
     public void move() {
-
-        int diff = Math.abs(height - ball.getY());
-        if (ball.getY() > height
-                && height < Field.getHEIGHT() - Paddle.getHEIGHT()) {
-            height += calculateSpeedOfPaddle(diff);
-        } else if (ball.getY() < height && height > 0) {
-            height -= calculateSpeedOfPaddle(diff);
+        int middlePoint = y + Paddle.getHEIGHT() / 2;
+        int diff = Math.abs(middlePoint - ball.getY());
+        if (ball.getY() > middlePoint
+                && y < Field.getHEIGHT() - Paddle.getHEIGHT()) {
+            y += calculateSpeedOfPaddle(diff);
+        } else if (ball.getY() < middlePoint && y > 0) {
+            y -= calculateSpeedOfPaddle(diff);
         }
     }
 
     private int calculateSpeedOfPaddle(double diff) {
-        return (int) (ballSpeedMultiplier * Math.min(diff / 40, 2) + 1);
+        return (int) (ballSpeedMultiplier * Math.min(diff / 50, 2) + 1);
     }
 
     public int getY() {
-        return height;
+        return y;
     }
 
 }

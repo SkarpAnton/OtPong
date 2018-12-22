@@ -1,12 +1,14 @@
 package tests.game;
 
 
+import java.sql.Connection;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import pong.game.Pong;
 import pong.game.Speeds;
+import pong.rating.RatingHandler;
 
 
 public class PongTest {
@@ -21,7 +23,7 @@ public class PongTest {
     }
     
     @Before
-    public void setUp() {
+    public void setUp() {        
         pong = new Pong(Speeds.getNormal(), true, null);
     }
     
