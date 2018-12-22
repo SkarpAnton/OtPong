@@ -6,7 +6,7 @@ Aluksi lataa suoritettava tiedosto [FakePong_v1-1.jar](https://github.com/SkarpA
 
 ## Konfiguraatio
 
-Jos näyttösi virkistystaajuus (refresh rate) on korkeampi kuin 60hz, on suositeltavaa, että lasket näyttösi taajuuden mahdollsimman lähelle 60hz peliä varten.
+Jos näyttösi virkistystaajuus (refresh rate) on korkeampi kuin 60hz, on suositeltavaa, että lasket näyttösi taajuuden mahdollisimman lähelle 60hz peliä varten.
 Pelin animaattori on riippuvainen näytön virkisstystaajuudesta ja täten pelin nopeus on suoraan verrannollinen näytön virkistystaajuden kanssa. 
 
 Jos virkistystaajuuden muuuttaminen ei ole tuttu prosessi niin netistä löytyy lukuisia ohjeita, jotka on suunnattu käyttämällesi käyttöjärjestelmälle esim. [Windows 10](https://www.windowscentral.com/how-change-monitor-refresh-rate-windows-10) ja [Ubuntu](https://askubuntu.com/questions/861416/changing-refresh-rate-for-specific-monitor)
@@ -17,6 +17,8 @@ Tiedosto suoritetaan komennolla:
 ```
 java -jar FakePong_v1-1.jar
 ```
+Tiedoston voi suorittaa myös kaksoisnäpäyttällä ladattua tiedostoa, ainakin Windows 10:ssä.
+
 ## Aloitus valikko
 
 ![Aloitus valikko](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/Starting%20menu.png)
