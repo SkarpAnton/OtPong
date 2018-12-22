@@ -18,5 +18,6 @@
 |19.12|2 h|arkkitehtuuri dokumentin muokkausta|
 |19.12|10 min|määrittelydokumentin muokkaus|
 |20.12|1 h|testausdokumentin muodostus|
-|yht|25h 50min|||
+|22.12|1 h|löytämieni bugien korjausta|
+|yht|26h 50min|||
 
