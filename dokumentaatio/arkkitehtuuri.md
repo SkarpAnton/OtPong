@@ -7,8 +7,8 @@
 #### Menu
 
 Menu sisältää kaksi luokkaa ja viisi pakkausta. Luokat ovat nimeltään MenuController ja MenuELements, molemmat luokat ovat abstrakteja.
-Kaikki viisi pakkausta siältävät vain kaksi luokkaa, jotka ovat nimeltään "pakkauksen nimi"Controller ja "pakkauksen nimi"Elements. Controller luokat perii MenuController:in ja elements luokat perii MenuElements:in. Jokainen pakkauksista on vastuussa yhdestä sivusta. 
-Elements luokassa on tarvittavat JavaFX eklementit ja controller luokassa on niihin liittyvä logiikka.
+Kaikki viisi pakkausta sisältävät vain kaksi luokkaa, jotka ovat nimeltään "pakkauksen nimi"Controller ja "pakkauksen nimi"Elements. Controller luokat perii MenuController:in ja elements luokat perii MenuElements:in. Jokainen pakkauksista on vastuussa yhdestä sivusta. 
+Elements luokassa on tarvittavat JavaFX elementit ja controller luokassa on niihin liittyvä logiikka.
 
 ![Menu pakkauskaavio](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/MenuKaavio.png)
 
