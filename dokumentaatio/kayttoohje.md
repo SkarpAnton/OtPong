@@ -1,6 +1,15 @@
 # Käyttöohje
 
+## Alustus
+
 Aluksi lataa suoritettava tiedosto [FakePong_v1-1.jar](https://github.com/SkarpAnton/OtPong/releases);
+
+## Konfiguraatio
+
+Jos näyttösi virkistystaajuus (refresh rate) on korkeampi kuin 60hz, on suositeltavaa, että lasket näyttösi taajuuden mahdollsimman lähelle 60hz peliä varten.
+Pelin animaattori on riippuvainen näytön virkisstystaajuudesta ja täten pelin nopeus on suoraan verrannollinen näytön virkistystaajuden kanssa. 
+
+Jos virkistystaajuuden muuuttaminen ei ole tuttu prosessi niin netistä löytyy lukuisia ohjeita, jotka on suunnattu käytytämällesi käyttöjärjestelmälle esim. [Windows 10](https://www.windowscentral.com/how-change-monitor-refresh-rate-windows-10) ja [Ubuntu](https://askubuntu.com/questions/861416/changing-refresh-rate-for-specific-monitor)
 
 ## Suoritus
 
