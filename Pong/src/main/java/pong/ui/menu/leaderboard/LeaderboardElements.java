@@ -6,6 +6,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import pong.game.AI;
 import pong.rating.database.DatabaseRatingDao;
 import pong.rating.PlayerAndRating;
 import pong.rating.RatingDao;
@@ -14,7 +15,8 @@ import pong.ui.menu.MenuElements;
 
 public class LeaderboardElements extends MenuElements {
 
-    private final String url = "jdbc:sqlite:databases/ratings.db";
+    private final String url = "jdbc:sqlite::resource:"
+            + AI.class.getClassLoader().getResource("databases/ratings.db");
     private final RatingDao dao = new DatabaseRatingDao(url);
     private HBox leaderboard;
     private Text instruction;

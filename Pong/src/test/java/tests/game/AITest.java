@@ -47,17 +47,16 @@ public class AITest {
             ai.move();
             int newYDiff = difference();
             if (ball.getY() > Paddle.getHEIGHT() / 2
-                    && ball.getY() < Field.getHEIGHT() - Paddle.getHEIGHT() / 2) {                
+                    && ball.getY() < Field.getHEIGHT() - Paddle.getHEIGHT() / 2) {
                 assertTrue(newYDiff <= currentYDiff || currentYDiff <= 2);
             }
         }
     }
-   
-    
+
     private int difference() {
         return Math.abs(ball.getY() - paddleMiddlePoint());
     }
-    
+
     private int paddleMiddlePoint() {
         return ai.getY() + Paddle.getHEIGHT() / 2;
     }

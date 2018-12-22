@@ -2,23 +2,22 @@ package tests.rating;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pong.game.AI;
 import pong.rating.database.DatabaseRatingDao;
 import pong.rating.PlayerAndRating;
 import pong.rating.RatingDao;
 
 public class DatabaseRatingDaoTest {
 
-    private static final String URL = "jdbc:sqlite:databases/test.db";
+    private static final String URL = "jdbc:sqlite::resource:"
+            + AI.class.getClassLoader().getResource("databases/test.db");
     private static Connection connection;
     private final RatingDao dao = new DatabaseRatingDao(URL);
 
@@ -32,7 +31,6 @@ public class DatabaseRatingDaoTest {
             connection = null;
             connection = DriverManager.getConnection(URL);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(DatabaseRatingDaoTest.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -55,7 +53,7 @@ public class DatabaseRatingDaoTest {
     public void testGet() {
         assertEquals(10, dao.getRating("TestName1"));
     }
-    
+
     @Test
     public void testGetNameDoesNotExist() {
         assertEquals(1000, dao.getRating("NoName"));
@@ -66,7 +64,7 @@ public class DatabaseRatingDaoTest {
         dao.updateRating("testi", 5);
         assertEquals(5, dao.getRating("testi"));
     }
-    
+
     @Test
     public void testTopTen() {
         List<PlayerAndRating> ratings = dao.getTopTen();

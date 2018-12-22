@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pong.game.AI;
 import pong.rating.database.DatabaseRatingDao;
 import pong.rating.RatingDao;
 import pong.rating.RatingHandler;
@@ -18,7 +19,8 @@ public class RatingHandlerTest {
 
     private final String playerOneName = "TestName1";
     private final String playerTwoName = "TestName2";
-    private static final String URL = "jdbc:sqlite:databases/test.db";
+    private static String URL = "jdbc:sqlite::resource:"
+            + AI.class.getClassLoader().getResource("databases/test.db");
     private static Connection connection;
     private final RatingHandler ratingHandler = new RatingHandler(playerOneName, playerTwoName, URL);
     private final RatingDao dao = new DatabaseRatingDao(URL);

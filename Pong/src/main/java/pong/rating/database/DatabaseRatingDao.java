@@ -3,16 +3,14 @@ package pong.rating.database;
 import java.util.List;
 import pong.rating.PlayerAndRating;
 import pong.rating.RatingDao;
-import pong.rating.database.GetRatingStatement;
-import pong.rating.database.GetTopTenStatement;
-import pong.rating.database.UpdateRatingStatement;
+
 
 /**
  * Database implementation of the RatingDao
  */
 public class DatabaseRatingDao implements RatingDao {
 
-    private String url;
+    private final String url;
 
     /**
      * 

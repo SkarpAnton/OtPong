@@ -63,8 +63,7 @@ public class Pong {
         }
 
     }
-    
-  
+
     public void updateRating() {
         if (ratingHandler != null) {
             ratingHandler.updateRatings(isPlayerOneWinner());
@@ -107,6 +106,7 @@ public class Pong {
 
     /**
      * checks if player one won
+     *
      * @return true if player one has 11 or more goals otherwise false
      */
     public boolean isPlayerOneWinner() {
@@ -115,6 +115,7 @@ public class Pong {
 
     /**
      * checks if player two won
+     *
      * @return true if player two has 11 or more goals otherwise false
      */
     public boolean isPlayerTwoWinner() {
@@ -123,7 +124,9 @@ public class Pong {
 
     /**
      * Checks if game ended
-     * @return true if one side has scored 11 or more goals otherwise return false.
+     *
+     * @return true if one side has scored 11 or more goals otherwise return
+     * false.
      */
     public boolean hasGameEnded() {
         return isPlayerOneWinner() || isPlayerTwoWinner();

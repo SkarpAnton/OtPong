@@ -15,7 +15,7 @@ import pong.ui.menu.pause.PauseController;
 import pong.ui.menu.pause.PauseElements;
 
 /**
- * 
+ *
  */
 public class GameController {
 
@@ -55,16 +55,16 @@ public class GameController {
             pong.getPlayerOne().stop(e.getCode());
             pong.getPlayerTwo().stop(e.getCode());
         });
-        
+
     }
-    
+
     private void openMenu(KeyCode key) {
         if (KeyCode.ESCAPE == key) {
             PauseController pauseController = new PauseController(new PauseElements(), this);
             pauseController.run(stage);
         }
     }
-    
+
     private void createTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -77,14 +77,14 @@ public class GameController {
             }
         };
     }
-    
+
     /**
      * starts the game
      */
     public void start() {
         timer.start();
     }
-    
+
     /**
      * stops the game
      */

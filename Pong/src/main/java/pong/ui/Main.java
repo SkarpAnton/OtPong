@@ -17,7 +17,7 @@ public class Main extends Application {
                 = new StartingMenuController(new StartingMenuElements());
         startingMenuController.run(stage);
     }
-
+    
     /**
      * the main function of the program
      * @param args the command line arguments

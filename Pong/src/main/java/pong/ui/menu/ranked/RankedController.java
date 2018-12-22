@@ -2,6 +2,7 @@ package pong.ui.menu.ranked;
 
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import pong.game.AI;
 import pong.rating.RatingHandler;
 import pong.game.Speeds;
 import pong.ui.game.GameController;
@@ -9,7 +10,10 @@ import pong.ui.menu.MenuController;
 
 public class RankedController extends MenuController {
 
-    RankedElements rankedElements;
+    private boolean firstActivation = false;
+    private final String url = "jdbc:sqlite::resource:"
+            + AI.class.getClassLoader().getResource("databases/ratings.db");
+    private final RankedElements rankedElements;
 
     public RankedController(RankedElements rankedElements) {
         super(rankedElements);
@@ -39,19 +43,19 @@ public class RankedController extends MenuController {
             rankedElements.missingName();
         } else if (containsSpecialChars(playerOneName, playerTwoName)) {
             rankedElements.usesSpecialChars();
-        } else {
-            RatingHandler ranked = new RatingHandler(playerOneName, playerTwoName,
-                    "jdbc:sqlite:databases/ratings.db");
+        } else if (!firstActivation) {
+            firstActivation = true;
+            RatingHandler ranked = new RatingHandler(playerOneName, playerTwoName, url);
             GameController gameController
                     = new GameController(true, Speeds.getFast(), ranked, stage);
             stage.setScene(gameController.getScene());
             gameController.start();
         }
     }
-    
+
     private boolean containsSpecialChars(String playerOneName, String playerTwoName) {
-        return !playerOneName.matches("[a-zA-Z0-9\\s]*") || 
-                !playerTwoName.matches("[a-zA-Z0-9\\s]*");
+        return !playerOneName.matches("[a-zA-Z0-9\\s]*")
+                || !playerTwoName.matches("[a-zA-Z0-9\\s]*");
     }
 
 }
