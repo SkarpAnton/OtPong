@@ -28,7 +28,7 @@ En testannut automaattisesti käyttöliittymää, vaikka olisi sellainenkin ollu
 
 Jos käyttöliittymää ei huomioi niin testikattavuus on hyvä. Rivikattavuus on 97% ja haaraumakattavuus on 100%.
 
-![Testikattavuus](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/testikattavuus.png)
+![Testikattavuus](https://github.com/SkarpAnton/OtPong/blob/master/dokumentaatio/Kuvat/Testikattavuus.png)
 
 ### Puutteet
 
